@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 叮当了个和谐</title>
+  <title>文件数据和文件元数据详解 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叮当了个和谐">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="file data and fi1e metadata文件的数据分为两类：一类为数据，即文件的实际内容；另一类为元数据，用来描述文件的特征。 元数据内容：文件名文件大小文件所在数据块数据块的大小文件类型文件所在的Inode硬链接次数权限属主id属组id最近一次访问时间戳最近一次更改文件内容的时间戳最近一次更改文件元数据的时间戳查看文件的元数据stat [OPTION]… FILE…OPTION：-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文件数据和文件元数据详解">
+<meta property="og:url" content="http://yoursite.com/2017/10/21/文件数据和文件元数据详解/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
+<meta property="og:description" content="file data and fi1e metadata文件的数据分为两类：一类为数据，即文件的实际内容；另一类为元数据，用来描述文件的特征。 元数据内容：文件名文件大小文件所在数据块数据块的大小文件类型文件所在的Inode硬链接次数权限属主id属组id最近一次访问时间戳最近一次更改文件内容的时间戳最近一次更改文件元数据的时间戳查看文件的元数据stat [OPTION]… FILE…OPTION：-">
+<meta property="og:updated_time" content="2017-10-21T08:40:50.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:title" content="文件数据和文件元数据详解">
+<meta name="twitter:description" content="file data and fi1e metadata文件的数据分为两类：一类为数据，即文件的实际内容；另一类为元数据，用来描述文件的特征。 元数据内容：文件名文件大小文件所在数据块数据块的大小文件类型文件所在的Inode硬链接次数权限属主id属组id最近一次访问时间戳最近一次更改文件内容的时间戳最近一次更改文件元数据的时间戳查看文件的元数据stat [OPTION]… FILE…OPTION：-">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -157,266 +161,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-文件数据和文件元数据详解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      文件数据和文件元数据详解
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/21/文件数据和文件元数据详解/" class="archive-article-date">
+
+        
+        <a href="/2017/10/21/文件数据和文件元数据详解/" class="archive-article-date">
   	<time datetime="2017-10-21T08:37:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/21/文件数据和文件元数据详解/">文件数据和文件元数据详解</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="file-data-and-fi1e-metadata"><a href="#file-data-and-fi1e-metadata" class="headerlink" title="file data and fi1e metadata"></a><strong>file data and fi1e metadata</strong></h1><p>文件的数据分为两类：一类为数据，即文件的实际内容；另一类为元数据，用来描述文件的特征。</p>
+<p>元数据内容：<br>文件名<br>文件大小<br>文件所在数据块<br>数据块的大小<br>文件类型<br>文件所在的Inode<br>硬链接次数<br>权限<br>属主id<br>属组id<br>最近一次访问时间戳<br>最近一次更改文件内容的时间戳<br>最近一次更改文件元数据的时间戳<br>查看文件的元数据<br>stat [OPTION]… FILE…<br>OPTION：<br>-f 输出文件系统的状态，而非文件的状态<br>-t 显示简要格式的文件元数据信息<br>FILE：可同时查看多个文件的元数据信息，多个文件以空格分开<br>举例：stat /etc/passwd 查看/etc/passwd文件的元数据信息<br>修改文件的时间戳<br>touch [OPTION]… FILE…<br>OPTION：<br>-a 仅修改文件的访问时间<br>-m 仅修改更改文件内容的时间<br>-t 时间的格式为[[CC]YY]MMDDhhmm[.ss]<br>举例： touch -m -t 1706291230.00 /tmp/njy 修改/tmp/njy的modify time时间为2017年6月29日12时30分0秒</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://dcpnonstop.github.io/blogimg/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/21/文件数据和文件元数据详解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/15/雨天的周末/" class="archive-article-date">
-  	<time datetime="2017-10-15T14:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/15/雨天的周末/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">雨天杂记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/15/雨天的周末/">雨天杂记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/15/如何把本地项目上传到Github/" class="archive-article-date">
-  	<time datetime="2017-10-15T13:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/15/如何把本地项目上传到Github/">如何把本地项目上传到Github</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/14/献给写作者的 Markdown 新手指南/" class="archive-article-date">
-  	<time datetime="2017-10-14T06:09:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/14/献给写作者的 Markdown 新手指南/">献给写作者的 Markdown 新手指南</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂文</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/13/写在奶奶离开之际/" class="archive-article-date">
-  	<time datetime="2017-10-13T12:58:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/13/写在奶奶离开之际/">写在奶奶离开之际</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/13/欢迎使用CSDN-markdown编辑器/" class="archive-article-date">
-  	<time datetime="2017-10-13T06:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/13/欢迎使用CSDN-markdown编辑器/">欢迎使用Markdown编辑器写博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-13T03:32:53.995Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -439,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
