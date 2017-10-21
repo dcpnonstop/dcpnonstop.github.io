@@ -8,16 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>文件数据和文件元数据详解 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="file data and fi1e metadata&amp;emsp;&amp;emsp;任何文件系统中的数据分为数据和元数据。数据是指普通文件中的实际数据，即文件的实际内容；而元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者以及文件数据块的分布信息(inode…)等等。在集群文件系统中，分布信息包括文件在磁盘上的位置以及磁盘在集群中的位置。用户需要操作一个文件必须首先得到它的元数据，才能定">
+  <meta name="description" content="file data and fi1e metadata">
+<meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件数据和文件元数据详解">
 <meta property="og:url" content="http://yoursite.com/2017/10/21/文件数据和文件元数据详解/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
-<meta property="og:description" content="file data and fi1e metadata&amp;emsp;&amp;emsp;任何文件系统中的数据分为数据和元数据。数据是指普通文件中的实际数据，即文件的实际内容；而元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者以及文件数据块的分布信息(inode…)等等。在集群文件系统中，分布信息包括文件在磁盘上的位置以及磁盘在集群中的位置。用户需要操作一个文件必须首先得到它的元数据，才能定">
-<meta property="og:updated_time" content="2017-10-21T11:22:27.124Z">
+<meta property="og:description" content="file data and fi1e metadata">
+<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/1021.png">
+<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/autum2.JPG">
+<meta property="og:updated_time" content="2017-10-21T13:57:07.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件数据和文件元数据详解">
-<meta name="twitter:description" content="file data and fi1e metadata&amp;emsp;&amp;emsp;任何文件系统中的数据分为数据和元数据。数据是指普通文件中的实际数据，即文件的实际内容；而元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者以及文件数据块的分布信息(inode…)等等。在集群文件系统中，分布信息包括文件在磁盘上的位置以及磁盘在集群中的位置。用户需要操作一个文件必须首先得到它的元数据，才能定">
+<meta name="twitter:description" content="file data and fi1e metadata">
+<meta name="twitter:image" content="https://dcpnonstop.github.io/blogimg/1021.png">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -181,8 +185,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="file-data-and-fi1e-metadata"><a href="#file-data-and-fi1e-metadata" class="headerlink" title="file data and fi1e metadata"></a><strong>file data and fi1e metadata</strong></h1><p>&emsp;&emsp;任何文件系统中的数据分为数据和元数据。数据是指普通文件中的实际数据，即文件的实际内容；而元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者以及文件数据块的分布信息(inode…)等等。在集群文件系统中，分布信息包括文件在磁盘上的位置以及磁盘在集群中的位置。用户需要操作一个文件必须首先得到它的元数据，才能定位到文件的位置并且得到文件的内容或相关属性。<br>   <a id="more"></a></p>
-<h2 id="元数据内容："><a href="#元数据内容：" class="headerlink" title="元数据内容："></a><strong>元数据内容：</strong></h2><p>文件名<br>文件大小<br>文件所在数据块<br>数据块的大小<br>文件类型<br>文件所在的Inode<br>硬链接次数<br>权限<br>属主id<br>属组id<br>最近一次访问时间戳<br>最近一次更改文件内容的时间戳<br>最近一次更改文件元数据的时间戳<br>查看文件的元数据<br>stat [OPTION]… FILE…<br>OPTION：<br>-f 输出文件系统的状态，而非文件的状态<br>-t 显示简要格式的文件元数据信息<br>FILE：可同时查看多个文件的元数据信息，多个文件以空格分开<br>举例：stat /etc/passwd 查看/etc/passwd文件的元数据信息<br>修改文件的时间戳<br>touch [OPTION]… FILE…<br>OPTION：<br>-a 仅修改文件的访问时间<br>-m 仅修改更改文件内容的时间<br>-t 时间的格式为[[CC]YY]MMDDhhmm[.ss]<br>举例： touch -m -t 1706291230.00 /tmp/njy 修改/tmp/njy的modify time时间为2017年6月29日12时30分0秒</p>
+        <p><img src="https://dcpnonstop.github.io/blogimg/1021.png" alt="image"></p>
+<h1 id="file-data-and-fi1e-metadata"><a href="#file-data-and-fi1e-metadata" class="headerlink" title="file data and fi1e metadata"></a><strong>file data and fi1e metadata</strong></h1><p><img src="https://dcpnonstop.github.io/blogimg/autum2.JPG" alt="image"></p>
+  <a id="more"></a>
+<p>&emsp;&emsp;任何文件系统中的数据分为数据和元数据。数据是指普通文件中的实际数据，即文件的实际内容；而元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件拥有者以及文件数据块的分布信息(inode…)等等。在集群文件系统中，分布信息包括文件在磁盘上的位置以及磁盘在集群中的位置。用户需要操作一个文件必须首先得到它的元数据，才能定位到文件的位置并且得到文件的内容或相关属性。 </p>
+<hr>
+<h3 id="元数据内容："><a href="#元数据内容：" class="headerlink" title="元数据内容："></a><strong>元数据内容：</strong></h3><p>文件名<br>文件大小<br>文件所在数据块<br>数据块的大小<br>文件类型<br>文件所在的Inode<br>硬链接次数<br>权限<br>属主id<br>属组id<br>最近一次访问时间戳<br>最近一次更改文件内容的时间戳<br>最近一次更改文件元数据的时间戳<br>查看文件的元数据<br>stat [OPTION]… FILE…<br>OPTION：<br>-f 输出文件系统的状态，而非文件的状态<br>-t 显示简要格式的文件元数据信息<br>FILE：可同时查看多个文件的元数据信息，多个文件以空格分开<br>举例：stat /etc/passwd 查看/etc/passwd文件的元数据信息<br>修改文件的时间戳<br>touch [OPTION]… FILE…<br>OPTION：<br>-a 仅修改文件的访问时间<br>-m 仅修改更改文件内容的时间<br>-t 时间的格式为[[CC]YY]MMDDhhmm[.ss]<br>举例： touch -m -t 1706291230.00 /tmp/njy 修改/tmp/njy的modify time时间为2017年6月29日12时30分0秒</p>
 
       
 
@@ -217,6 +225,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
