@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 随笔 | 叮当了个和谐</title>
+  <title>平滑处理--拉普拉斯（Laplace Smoothing） | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叮当了个和谐">
-<meta property="og:url" content="http://yoursite.com/tags/随笔/index.html">
+  <meta name="description" content="拉普拉斯平滑（Laplace Smoothing）又被称为加 1 平滑，是比较常用的平滑方法。平滑方法的存在时为了解决零概率问题。">
+<meta name="keywords" content="技术积累">
+<meta property="og:type" content="article">
+<meta property="og:title" content="平滑处理--拉普拉斯（Laplace Smoothing）">
+<meta property="og:url" content="http://yoursite.com/2017/11/24/平滑处理-拉普拉斯（laplace）/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
+<meta property="og:description" content="拉普拉斯平滑（Laplace Smoothing）又被称为加 1 平滑，是比较常用的平滑方法。平滑方法的存在时为了解决零概率问题。">
+<meta property="og:image" content="http://img.blog.csdn.net/20171124091637858?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-11-24T01:18:12.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:title" content="平滑处理--拉普拉斯（Laplace Smoothing）">
+<meta name="twitter:description" content="拉普拉斯平滑（Laplace Smoothing）又被称为加 1 平滑，是比较常用的平滑方法。平滑方法的存在时为了解决零概率问题。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171124091637858?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -157,136 +164,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-平滑处理-拉普拉斯（laplace）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      平滑处理--拉普拉斯（Laplace Smoothing）
+    </h1>
+  
+
+        
+        <a href="/2017/11/24/平滑处理-拉普拉斯（laplace）/" class="archive-article-date">
+  	<time datetime="2017-11-24T01:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>拉普拉斯平滑（Laplace Smoothing）又被称为加 1 平滑，是比较常用的平滑方法。平滑方法的存在时为了解决零概率问题。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="背景-为什么要做平滑处理"><a href="#背景-为什么要做平滑处理" class="headerlink" title="背景:为什么要做平滑处理?"></a><em>背景:为什么要做平滑处理?</em></h2><p>&emsp;&emsp;零概率问题，就是在计算实例的概率时，如果某个量x，在观察样本库（训练集）中没有出现过，会导致整个实例的概率结果是0。在文本分类的问题中，当一个词语没有在训练样本中出现，该词语调概率为0，使用连乘计算文本出现概率时也为0。这是不合理的，不能因为一个事件没有观察到就武断的认为该事件的概率是0。</p>
+<h2 id="拉普拉斯的理论支撑"><a href="#拉普拉斯的理论支撑" class="headerlink" title="拉普拉斯的理论支撑"></a><em>拉普拉斯的理论支撑</em></h2><p>&emsp;&emsp;为了解决零概率的问题，法国数学家拉普拉斯最早提出用加1的方法估计没有出现过的现象的概率，所以加法平滑也叫做拉普拉斯平滑。<br>&emsp;&emsp;假定训练样本很大时，每个分量x的计数加1造成的估计概率变化可以忽略不计，但可以方便有效的避免零概率问题。</p>
+<h2 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a><em>应用举例</em></h2><p>&emsp;&emsp;假设在文本分类中，有3个类，C1、C2、C3，在指定的训练样本中，某个词语K1，在各个类中观测计数分别为0，990，10，K1的概率为0，0.99，0.01，对这三个量使用拉普拉斯平滑的计算方法如下：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1/1003 = 0.001，991/1003=0.988，11/1003=0.011<br>&emsp;&emsp;在实际的使用中也经常使用加 lambda（1≥lambda≥0）来代替简单加1。如果对N个计数都加上lambda，这时分母也要记得加上N*lambda。<br><img src="http://img.blog.csdn.net/20171124091637858?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="斯坦福第五章：拉普拉斯平滑处理"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://dcpnonstop.github.io/blogimg/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/21/文件数据和文件元数据详解/" class="archive-article-date">
-  	<time datetime="2017-10-21T08:37:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/21/文件数据和文件元数据详解/">文件数据和文件元数据详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/24/平滑处理-拉普拉斯（laplace）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/15/如何把本地项目上传到Github/" class="archive-article-date">
-  	<time datetime="2017-10-15T13:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/17/调用微博API获取微博内容/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">调用微博API获取微博内容</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/15/如何把本地项目上传到Github/">如何把本地项目上传到Github</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/13/欢迎使用CSDN-markdown编辑器/" class="archive-article-date">
-  	<time datetime="2017-10-13T06:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/13/欢迎使用CSDN-markdown编辑器/">欢迎使用Markdown编辑器写博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -309,9 +355,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
