@@ -9,15 +9,18 @@
   <title>6步学会朴素贝叶斯算法 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
+<meta name="keywords" content="技术积累">
 <meta property="og:type" content="article">
 <meta property="og:title" content="6步学会朴素贝叶斯算法">
 <meta property="og:url" content="http://yoursite.com/2017/11/30/6步学会朴素贝叶斯算法/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
-<meta property="og:updated_time" content="2017-11-30T14:08:48.450Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-11-30T14:51:00.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6步学会朴素贝叶斯算法">
 <meta name="twitter:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -191,7 +194,15 @@
 <li>用python语言构建基本的朴素贝叶斯模型的步骤</li>
 <li>提高朴素贝叶斯模型的方法</li>
 </ol>
-<h3 id="什么是贝叶斯算法？"><a href="#什么是贝叶斯算法？" class="headerlink" title="什么是贝叶斯算法？"></a><strong>什么是贝叶斯算法？</strong></h3><p>&emsp;&emsp;未完待续</p>
+<h3 id="什么是贝叶斯算法？"><a href="#什么是贝叶斯算法？" class="headerlink" title="什么是贝叶斯算法？"></a><strong>什么是贝叶斯算法？</strong></h3><p>贝叶斯算法一种基于贝叶斯定理的分类技术，具有独立于预测因子的假设。简而言之，朴素贝叶斯分类器假设类中特定特征和其它特征的存在无关。例如，一个水果如果是红色，圆形的，并且直径约3英尺，则这个水果可以被认为是红色苹果。即使这些特征依赖于彼此或者依赖于其它特征的存在，所有的这些特征独立的贡献了这个水果是苹果的可能性，这就是为什么它被称为“朴素”的原因。<br>朴素贝叶斯模型很容易构建，特别适用于非常大的数据集。除了简单性，众所周知，朴素贝叶斯甚至胜过高度复杂的分类方法。<br>贝叶斯定理提供了一种从P(c),P(x)和P(x|c)计算后验概率P(c|x)的方法。看下面的公式：<br><img src="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="bayes"><br>以上：</p>
+<ul>
+<li>P（c|x）是给定预测变量（x，属性）的类（c，target）的后验概率。</li>
+<li>P（c）是类的先验概率。</li>
+<li>P（x | c）是预测器给定类的概率的可能性。</li>
+<li><p>P（x）是预测器的先验概率。</p>
+<h3 id="贝叶斯算法是如何工作的？"><a href="#贝叶斯算法是如何工作的？" class="headerlink" title="贝叶斯算法是如何工作的？"></a><strong>贝叶斯算法是如何工作的？</strong></h3></li>
+</ul>
+<p>&emsp;&emsp;未完待续</p>
 
       
 
@@ -226,6 +237,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -418,15 +440,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">技术积累</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">心情记录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术积累</a>
               </li>
              
               <li class="article-tag-list-item">
