@@ -17,7 +17,7 @@
 <meta property="og:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
 <meta property="og:image" content="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png">
-<meta property="og:updated_time" content="2017-12-01T06:30:55.540Z">
+<meta property="og:updated_time" content="2017-12-01T07:33:21.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6步学会朴素贝叶斯算法">
 <meta name="twitter:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
@@ -210,8 +210,55 @@
 <p>P(是|晴天)= P(晴天|是)*P(是)/ P(晴天)</p>
 <p>这里我们有P（晴天|是）= 3/9 = 0.33，P（晴天）= 5/14 = 0.36，P（是）= 9/14 = 0.64</p>
 <p>现在，P（是| 晴天）= 0.33 * 0.64 / 0.36 = 0.60，其概率较高。</p>
-<p>朴素贝叶斯使用类似的方法来预测基于各种属性的不同类别的概率。 这个算法主要用于文本分类和多类问题。</p>
-<p>&emsp;&emsp;未完待续</p>
+<p>朴素贝叶斯使用类似的方法来预测基于各种属性的不同类别的概率，这个算法主要用于文本分类和多类问题。</p>
+<h3 id="朴素贝叶斯算法的优点和缺点是什么？"><a href="#朴素贝叶斯算法的优点和缺点是什么？" class="headerlink" title="朴素贝叶斯算法的优点和缺点是什么？"></a><strong>朴素贝叶斯算法的优点和缺点是什么？</strong></h3><p><strong>优点：</strong></p>
+<ul>
+<li>预测测试数据集的类别是容易且快速的,它在多分类预测中也表现良好</li>
+<li>当独立性假设成立时，朴素贝叶斯分类器与逻辑回归等其他模型相比表现更好，而且需要更少的训练数据。</li>
+<li>与数值变量（s）相比，它在分类输入变量的情况下表现良好。数值变量是正态分布假设（正态曲线图，这是一个强有力的假设）。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>如果分类变量在测试数据集里面有类别，但在训练数据集中未观察到该类别，则模型将分配0（零）概率，并且将不能进行预测。这通常被称为“<br>零概率”。为了解决这个问题，我们可以使用平滑技术。最简单的平滑技术之一被称为拉普拉斯评估。</li>
+<li>另一方面，朴素贝叶斯（Bayes）也被称为不好的估计器，所以来自predict_proba的概率输出不应该被过于重视。</li>
+<li>朴素贝叶斯的另一个局限是独立预测因子的假设。在现实生活中，我们得到一组完全独立的预测变量几乎是不可能的。</li>
+</ul>
+<h3 id="朴素贝叶斯算法的四种应用"><a href="#朴素贝叶斯算法的四种应用" class="headerlink" title="朴素贝叶斯算法的四种应用"></a><strong>朴素贝叶斯算法的四种应用</strong></h3><ul>
+<li><p>实时预测：朴素贝叶斯是一个热切的学习分类器，它肯定是快速的。 因此，它可以用于实时预测。</p>
+</li>
+<li><p>多类预测：这种算法也是众所周知的多类预测功能。这里我们可以预测多个目标变量类别的概率。</p>
+</li>
+<li><p>文本分类/垃圾邮件过滤/情感分析：主要用于文本分类的朴素贝叶斯分类器（由于更好的结果在多类问题和独立性规则）比其他算法具有更高的<br>成功率。 因此，它被广泛用于垃圾邮件过滤（识别垃圾邮件）和情感分析（在社交媒体分析中，识别客户积极和消极的情绪）</p>
+</li>
+<li><p>推荐系统：朴素贝叶斯分类器和协作过滤一起构建推荐系统，该系统使用机器学习和数据挖掘技术来过滤看不见的信息并预测用户是否喜欢给定<br>的资源。</p>
+</li>
+</ul>
+<h3 id="用python语言构建基本的朴素贝叶斯模型的步骤"><a href="#用python语言构建基本的朴素贝叶斯模型的步骤" class="headerlink" title="用python语言构建基本的朴素贝叶斯模型的步骤"></a><strong>用python语言构建基本的朴素贝叶斯模型的步骤</strong></h3><p>再次，scikit学习（python库）将使用python语言在这里帮助建立一个朴素贝叶斯模型。在scikit学习库中有三种类型的朴素贝叶斯模型：</p>
+<ol>
+<li><p><strong>高斯（Gaussian）</strong>：它用于分类，它假设特征遵循正态分布。</p>
+</li>
+<li><p><strong>多项式</strong>：用于离散计数。比如说，我们有一个文本分类问题。在这里，我们可以进一步考虑伯努利实验，而不是“在文件中出现<br>的单词”，而是“统计单词在文档中出现的频率”，你可以将其视为“观察结果数x_i在n次试验中的次数“。</p>
+</li>
+<li><p><strong>伯努利</strong>：如果你的特征向量是二进制的（即零和一），二项式模型是有用的。一个应用是文本分类，词袋模型，其中1s＆0s分别是“单词出现在文档中”和“单词不出现在文档中”。</p>
+</li>
+</ol>
+<p>根据你的数据集，你可以选择任何上面讨论的模型。以下是高斯模型的例子。</p>
+<p><strong>Python 代码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#Import Library of Gaussian Naive Bayes model</div><div class="line">from sklearn.naive_bayes import GaussianNB</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">#assigning predictor and target variables</div><div class="line">x= np.array([[-3,7],[1,5], [1,2], [-2,0], [2,3], [-4,0], [-1,1], [1,1], [-2,2], [2,7], [-4,1], [-2,7]])</div><div class="line">Y = np.array([3, 3, 3, 3, 4, 3, 3, 4, 3, 4, 4, 4])</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#Create a Gaussian Classifier</div><div class="line">model = GaussianNB()</div><div class="line"></div><div class="line"># Train the model using the training sets </div><div class="line">model.fit(x, y)</div><div class="line"></div><div class="line">#Predict Output </div><div class="line">predicted= model.predict([[1,2],[3,4]])</div><div class="line">print predicted</div><div class="line"></div><div class="line">Output: ([3,4])</div></pre></td></tr></table></figure>
+<p><strong>R 代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">require(e1071) #Holds the Naive Bayes Classifier</div><div class="line">Train &lt;- read.csv(file.choose())</div><div class="line">Test &lt;- read.csv(file.choose())</div><div class="line"></div><div class="line">#Make sure the target variable is of a two-class classification problem only</div><div class="line"></div><div class="line">levels(Train$Item_Fat_Content)</div><div class="line"></div><div class="line">model &lt;- naiveBayes(Item_Fat_Content~., data = Train)</div><div class="line">class(model) </div><div class="line">pred &lt;- predict(model,Test)</div><div class="line">table(pred)</div></pre></td></tr></table></figure>
+<p>上面我们看了朴素贝叶斯模型，可以通过调整参数和智能处理假设来提高这个基本模型的能力。 我们来看看改进朴素贝叶斯模型性能的方法。 我建议你阅读这个<a href="http://www.inf.ed.ac.uk/teaching/courses/inf2b/learnnotes/inf2b-learn-note07-2up.pdf" target="_blank" rel="external">文档</a>，解关于使用朴素贝<br>叶斯的文本分类的更多细节。</p>
+<h3 id="提高朴素贝叶斯模型的方法"><a href="#提高朴素贝叶斯模型的方法" class="headerlink" title="提高朴素贝叶斯模型的方法"></a><strong>提高朴素贝叶斯模型的方法</strong></h3><p>以下是提高Naive Bayes模型功能的一些建议：</p>
+<ul>
+<li>如果连续性特征不具有正态分布，则应采用变换或不同的方法将其转换为正态分布。</li>
+<li>如果测试数据集具有零频率问题，则应用平滑技术“拉普拉斯修正”来预测测试数据集的类别。</li>
+<li>删除相关特征，因为高度相关的特征在模型中被投票两次，并且可能导致过度膨胀的重要性。</li>
+<li>朴素贝叶斯分类器参数调整的选项是有限的，比如alpha = 1来平滑，fit_prior = [True | False]来学习类别先验概率，还有其他一些选项（请看这里的<a href="http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB" target="_blank" rel="external">细节</a>）。我建议把重点放在数据的预处理和特征选择上。</li>
+<li>你可能会认为应用一些分类器组合技术，如集合，装袋和提高，但这些方法将无济于事。实际上，“集合，提升，装袋”不会有帮助，因为它<br>们的目的是减少变化。朴素贝叶斯没有任何变化可以最小化。</li>
+</ul>
+<h2 id="结束笔记"><a href="#结束笔记" class="headerlink" title="结束笔记"></a><strong>结束笔记</strong></h2><p>在本文中，我们看了一个主要用于分类的监督机器学习算法“朴素贝叶斯”。恭喜，如果你已经完全理解这篇文章，你已经迈入掌握这个算法的第一步。从这里开始，你需要的是练习。</p>
+<p>此外，我建议您在应用朴素贝叶斯算法之前更多地关注数据预处理和特征选择。</p>
+<p>你觉得这篇文章有帮助吗？请在下面的评论部分分享您的意见/想法。</p>
 
       
 
