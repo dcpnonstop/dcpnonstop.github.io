@@ -16,9 +16,22 @@
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
 <meta property="og:image" content="http://img.blog.csdn.net/20171201154508894?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://image.beekka.com/blog/201108/bg2011082502.jpg">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%7CB">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%5Ccap%20B">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%5Ccap%20B">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%7CB">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%7CB">
+<meta property="og:image" content="http://image.beekka.com/blog/201108/bg2011082503.jpg">
+<meta property="og:image" content="http://image.beekka.com/blog/201108/bg2011082504.jpg">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(B">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(B%5Ccap%20A">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(B">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%7CB">
+<meta property="og:image" content="http://chart.googleapis.com/chart?cht=tx&chl=P(A%7CB">
 <meta property="og:image" content="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png">
-<meta property="og:updated_time" content="2017-12-01T07:44:34.504Z">
+<meta property="og:updated_time" content="2017-12-01T08:02:44.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6步学会朴素贝叶斯算法">
 <meta name="twitter:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
@@ -188,6 +201,11 @@
       
         <h1 id="6步学会朴素贝叶斯算法（包含python语言和R语言源码）"><a href="#6步学会朴素贝叶斯算法（包含python语言和R语言源码）" class="headerlink" title="6步学会朴素贝叶斯算法（包含python语言和R语言源码）"></a><strong>6步学会朴素贝叶斯算法（包含python语言和R语言源码）</strong></h1><hr>
 <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h3><p>假设你遇到下面这种情况：<br>你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。<br><img src="http://img.blog.csdn.net/20171201154508894?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="11"><br><a id="more"></a><br>你会怎么做？你有数以千计个数据点，只有少数变量在你的训练集里面。在这种情况下，如果我是你，我会使用“朴素贝叶斯分类（Navie Bayes）”，相对于其它分类算法，它是非常快的。朴素贝叶斯分类依赖于贝叶斯概率定理来预测未知数据集的类别。<br>在本文中，我将介绍该算法的基础知识，以便在下次你遇到大型数据集的时候，你可以试用该算法来处理。另外，如果你是Python或R的新手，你应该温习一下这些语言，因为本文将会用这两种语言来实现朴素贝叶斯算法。</p>
+<p>要理解贝叶斯推断，必须先理解贝叶斯定理。后者实际上就是计算”条件概率”的公式。</p>
+<h2 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a><strong>贝叶斯定理</strong></h2><p>所谓”条件概率”（Conditional probability），就是指在事件B发生的情况下，事件A发生的概率，用P(A|B)来表示。<br><img src="http://image.beekka.com/blog/201108/bg2011082502.jpg" alt="条件概率"><br>根据文氏图，可以很清楚地看到在事件B发生的情况下，事件A发生的概率就是P(A∩B)除以P(B)。<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%7CB" alt="2">%3D%5Cfrac%7BP(A%5Ccap%20B)%7D%7BP(B)%7D&amp;chs=70)<br>因此，<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%5Ccap%20B" alt="3">%3DP(A%7CB)%7BP(B)%7D&amp;chs=40)<br>同理可得，<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%5Ccap%20B" alt="4">%3DP(B%7CA)%7BP(A)%7D&amp;chs=40)<br>所以，<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%7CB" alt="5">%7BP(B)%7D%3DP(B%7CA)%7BP(A)%7D&amp;chs=40)<br>即<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%7CB" alt="6">%3D%5Cfrac%7BP(B%7CA)%7BP(A)%7D%7D%7B%7BP(B)%7D%7D&amp;chs=70)<br>这就是条件概率的计算公式。</p>
+<h2 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a><strong>全概率公式</strong></h2><p>由于后面要用到，所以除了条件概率以外，这里还要推导全概率公式。<br>假定样本空间S，是两个事件A与A’的和。<br><img src="http://image.beekka.com/blog/201108/bg2011082503.jpg" alt="7"><br>上图中，红色部分是事件A，绿色部分是事件A’，它们共同构成了样本空间S。<br>在这种情况下，事件B可以划分成两个部分。<br><img src="http://image.beekka.com/blog/201108/bg2011082504.jpg" alt="8"><br>即<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(B" alt="9">%3DP(B%5Ccap%20A)%2BP(B%5Ccap%20A%27)&amp;chs=40)<br>在上一节的推导当中，我们已知<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(B%5Ccap%20A" alt="10">%3DP(B%7CA)P(A)&amp;chs=40)<br>所以，<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(B" alt="11">%3DP(B%7CA)P(A)%2BP(B%7CA%27)P(A%27)&amp;chs=40)<br>这就是全概率公式。它的含义是，如果A和A’构成样本空间的一个划分，那么事件B的概率，就等于A和A’的概率分别乘以B对这两个事件的条件概率之和。<br>将这个公式代入上一节的条件概率公式，就得到了条件概率的另一种写法：<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%7CB" alt="12">%3D%5Cfrac%7BP(B%7CA)P(A)%7D%7BP(B%7CA)P(A)%2BP(B%7CA%27)P(A%27)%7D&amp;chs=70)</p>
+<p>对条件概率公式进行变形，可以得到如下形式：<br><img src="http://chart.googleapis.com/chart?cht=tx&amp;chl=P(A%7CB" alt="14">%3DP(A)%5Cfrac%7BP(B%7CA)%7D%7BP(B)%7D&amp;chs=70)<br>我们把P(A)称为”先验概率”（Prior probability），即在B事件发生之前，我们对A事件概率的一个判断。P(A|B)称为”后验概率”（Posterior probability），即在B事件发生之后，我们对A事件概率的重新评估。P(B|A)/P(B)称为”可能性函数”（Likelyhood），这是一个调整因子，使得预估概率更接近真实概率。<br>所以，条件概率可以理解成下面的式子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　后验概率　＝　先验概率 ｘ 调整因子</div></pre></td></tr></table></figure></p>
+<p>这就是贝叶斯推断的含义。我们先预估一个”先验概率”，然后加入实验结果，看这个实验到底是增强还是削弱了”先验概率”，由此得到更接近事实的”后验概率”。<br>在这里，如果”可能性函数”P(B|A)/P(B)&gt;1，意味着”先验概率”被增强，事件A的发生的可能性变大；如果”可能性函数”=1，意味着B事件无助于判断事件A的可能性；如果”可能性函数”&lt;1，意味着”先验概率”被削弱，事件A的可能性变小。</p>
 <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a><strong>目录</strong></h3><ol>
 <li>什么是贝叶斯算法？</li>
 <li>贝叶斯算法是如何工作的？</li>
