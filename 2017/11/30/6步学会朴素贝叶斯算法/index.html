@@ -16,7 +16,8 @@
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
 <meta property="og:image" content="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-12-01T06:27:46.521Z">
+<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png">
+<meta property="og:updated_time" content="2017-12-01T06:30:55.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6步学会朴素贝叶斯算法">
 <meta name="twitter:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
@@ -203,7 +204,7 @@
 </ul>
 <h3 id="贝叶斯算法是如何工作的？"><a href="#贝叶斯算法是如何工作的？" class="headerlink" title="贝叶斯算法是如何工作的？"></a><strong>贝叶斯算法是如何工作的？</strong></h3><p>让我们用一个例子来理解它。下面我有一个天气和相应的目标变量“玩”（建议玩的可能性）的训练数据集。 现在，我们需要根据天气状况来分类玩家是否玩游戏。 让我们按照下面的步骤来执行它。</p>
 <p>步骤1：将数据集转换为频率表</p>
-<p>步骤2：通过查找概率如“阴天的概率= 0.29”和“播放的概率为0.64”来创建“似然”表。<br>![bayes2] （<a href="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png）" target="_blank" rel="external">https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png）</a></p>
+<p>步骤2：通过查找概率如“阴天的概率= 0.29”和“播放的概率为0.64”来创建“似然”表。<br><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png" alt="bayes2"></p>
 <p>步骤3：现在，使用朴素贝叶斯方程来计算每个类别的后验概率。后验概率最高的是预测的结果。<br><strong>问题：</strong>如果天气晴朗，玩家将会玩。这种说法是正确的吗？</p>
 <p>我们可以使用上面讨论的后验概率的方法来解决这个问题。</p>
 <p>P(是|晴天)= P(晴天|是)*P(是)/ P(晴天)</p>
