@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20171201161640567?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Bayes_41.png">
-<meta property="og:updated_time" content="2017-12-01T08:16:10.069Z">
+<meta property="og:updated_time" content="2017-12-04T14:11:41.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6步学会朴素贝叶斯算法">
 <meta name="twitter:description" content="6步学会朴素贝叶斯算法（包含python语言和R语言源码） 摘要假设你遇到下面这种情况：你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。">
@@ -216,10 +216,10 @@
 </ol>
 <h3 id="什么是贝叶斯算法？"><a href="#什么是贝叶斯算法？" class="headerlink" title="什么是贝叶斯算法？"></a><strong>什么是贝叶斯算法？</strong></h3><p>贝叶斯算法一种基于<a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank" rel="external">贝叶斯定理</a>的分类技术，具有独立于预测因子的假设。简而言之，朴素贝叶斯分类器假设类中特定特征和其它特征的存在无关。例如，一个水果如果是红色，圆形的，并且直径约3英尺，则这个水果可以被认为是红色苹果。即使这些特征依赖于彼此或者依赖于其它特征的存在，所有的这些特征独立的贡献了这个水果是苹果的可能性，这就是为什么它被称为“朴素”的原因。<br>朴素贝叶斯模型很容易构建，特别适用于非常大的数据集。除了简单性，众所周知，朴素贝叶斯甚至胜过高度复杂的分类方法。<br>贝叶斯定理提供了一种从P(c),P(x)和P(x|c)计算后验概率P(c|x)的方法。看下面的公式：<br><img src="http://img.blog.csdn.net/20171130224514721?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="bayes"><br>以上：</p>
 <ul>
-<li>P（c|x）是给定预测变量（x，属性）的类（c，target）的后验概率。</li>
-<li>P（c）是类的先验概率。</li>
-<li>P（x | c）是预测器给定类的概率的可能性。</li>
-<li>P（x）是预测器的先验概率。</li>
+<li>P（c|x）是给定预测变量（x，属性）的类（c，target）的后验概率。【即在看到新数据后，我们要计算的该假设的概率】</li>
+<li>P（c）是类的先验概率。【即在得到新数据前某一假设的概率】</li>
+<li>P（x | c）是预测器给定类的概率的可能性。【该假设下得到这一数据的概率，称为似然度】</li>
+<li>P（x）是预测器的先验概率。【在任何假设下得到这一数据的概率，称为标准化常量】</li>
 </ul>
 <h3 id="贝叶斯算法是如何工作的？"><a href="#贝叶斯算法是如何工作的？" class="headerlink" title="贝叶斯算法是如何工作的？"></a><strong>贝叶斯算法是如何工作的？</strong></h3><p>让我们用一个例子来理解它。下面我有一个天气和相应的目标变量“玩”（建议玩的可能性）的训练数据集。 现在，我们需要根据天气状况来分类玩家是否玩游戏。 让我们按照下面的步骤来执行它。</p>
 <p>步骤1：将数据集转换为频率表</p>
