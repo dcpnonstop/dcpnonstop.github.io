@@ -159,81 +159,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-22" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-TF-IDF模型的概率解释" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/22/">22</a>
+      <a class="article-title" href="/2018/03/05/TF-IDF模型的概率解释/">TF-IDF模型的概率解释</a>
     </h1>
   
 
         
-        <a href="/2018/03/05/22/" class="archive-article-date">
-  	<time datetime="2018-03-05T13:50:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/05/22/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/11/">11</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/05/11/" class="archive-article-date">
+        <a href="/2018/03/05/TF-IDF模型的概率解释/" class="archive-article-date">
   	<time datetime="2018-03-05T13:35:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
 </a>
         
@@ -241,7 +179,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p> &ensp;&ensp; TF-IDF（term frequency–inverse document frequency）是一种用于信息检索（information retrieval）与文本挖掘（text mining）的常用加权技术。比较容易理解的一个应用场景是当我们手头有一些文章时，我们希望计算机能够自动地进行关键词提取。而TF-IDF就是可以帮我们完成这项任务的一种统计方法。它能够用于评估一个词语对于一个文集或一个语料库中的其中一份文档的重要程度</p>
+<p>##　tf-idf 模型</p>
+<p>  &ensp;&ensp;  目前，真正在搜索引擎等实际应用中广泛使用的是 tf-idf 模型。tf-idf 模型的主要思想是：如果词w在一篇文档d中出现的频率高，并且在其他文档中很少出现，则认为词w具有很好的区分能力，适合用来把文章d和其他文章区分开来。该模型主要包含了两个因素：</p>
+<p>　&ensp;&ensp;　1) 词w在文档d中的词频 tf (Term Frequency)，即词w在文档d中出现次数 count (w， d)和w在文档集合D中出现总次数 count (w， D)的比值：
+　　</p>
+<blockquote>
+<p>tf (w,d)<br>= count (w, d) / count (w, D)<br>= count (w, d) / sum { i = 1..n | count (w, d[i]) }</p>
+</blockquote>
+<p>&ensp;&ensp;2) 词w在整个文档集合中的逆向文档频率 idf (Inverse Document Frequency)，即文档总数n与词w所出现文件数 docs (w， D)比值的对数:</p>
+<blockquote>
+<p> idf = log (n / docs (w, D))</p>
+</blockquote>
+<p>　&ensp;&ensp;tf-idf 模型根据 tf 和 idf 为每一个文档d和由关键词w[1]…w[k]组成的查询串q计算一个权值，用于表示查询串q与文档d的匹配度：</p>
+<blockquote>
+<p>tf-idf (q, d)<br>= sum { i = 1..k | tf-idf (w[i], d) }<br>= sum { i = 1..k | tf (w[i], d) * idf (w[i]) }</p>
+</blockquote>
+
       
 
       
@@ -249,11 +203,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/05/11/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/03/05/TF-IDF模型的概率解释/">展开全文 >></a>
         </p>
       
 
@@ -870,6 +835,83 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/10/14/献给写作者的 Markdown 新手指南/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-写在奶奶离开之际" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/13/写在奶奶离开之际/">写在奶奶离开之际</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/13/写在奶奶离开之际/" class="archive-article-date">
+  	<time datetime="2017-10-13T12:58:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;“至亲离去的那一瞬间通常不会使人感到悲伤，而真正会让你感到悲痛的是打开冰箱的那半盒牛奶、那窗台上随风微曳的绿箩、那安静折叠在床上的绒被，还有那深夜里洗衣机传来的阵阵喧哗。”</p>
+<h3 id="emsp-emsp-这句话扑面而来的画面感，一瞬间让我孤独到想哭"><a href="#emsp-emsp-这句话扑面而来的画面感，一瞬间让我孤独到想哭" class="headerlink" title="&emsp;&emsp;这句话扑面而来的画面感，一瞬间让我孤独到想哭"></a><strong>&emsp;&emsp;这句话扑面而来的画面感，一瞬间让我孤独到想哭</strong></h3><p>   <img src="https://dcpnonstop.github.io/blogimg/sad1.gif" alt="image"><br>
+        
+          <a class="article-more-a" href="/2017/10/13/写在奶奶离开之际/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/13/写在奶奶离开之际/">展开全文 >></a>
         </p>
       
 
