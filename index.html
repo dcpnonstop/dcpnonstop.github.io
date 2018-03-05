@@ -180,22 +180,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> &ensp;&ensp; TF-IDF（term frequency–inverse document frequency）是一种用于信息检索（information retrieval）与文本挖掘（text mining）的常用加权技术。比较容易理解的一个应用场景是当我们手头有一些文章时，我们希望计算机能够自动地进行关键词提取。而TF-IDF就是可以帮我们完成这项任务的一种统计方法。它能够用于评估一个词语对于一个文集或一个语料库中的其中一份文档的重要程度</p>
-<p>##　tf-idf 模型</p>
-<p>  &ensp;&ensp;  目前，真正在搜索引擎等实际应用中广泛使用的是 tf-idf 模型。tf-idf 模型的主要思想是：如果词w在一篇文档d中出现的频率高，并且在其他文档中很少出现，则认为词w具有很好的区分能力，适合用来把文章d和其他文章区分开来。该模型主要包含了两个因素：</p>
-<p>　&ensp;&ensp;　1) 词w在文档d中的词频 tf (Term Frequency)，即词w在文档d中出现次数 count (w， d)和w在文档集合D中出现总次数 count (w， D)的比值：
-　　</p>
-<blockquote>
-<p>tf (w,d)<br>= count (w, d) / count (w, D)<br>= count (w, d) / sum { i = 1..n | count (w, d[i]) }</p>
-</blockquote>
-<p>&ensp;&ensp;2) 词w在整个文档集合中的逆向文档频率 idf (Inverse Document Frequency)，即文档总数n与词w所出现文件数 docs (w， D)比值的对数:</p>
-<blockquote>
-<p> idf = log (n / docs (w, D))</p>
-</blockquote>
-<p>　&ensp;&ensp;tf-idf 模型根据 tf 和 idf 为每一个文档d和由关键词w[1]…w[k]组成的查询串q计算一个权值，用于表示查询串q与文档d的匹配度：</p>
-<blockquote>
-<p>tf-idf (q, d)<br>= sum { i = 1..k | tf-idf (w[i], d) }<br>= sum { i = 1..k | tf (w[i], d) * idf (w[i]) }</p>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2018/03/05/TF-IDF模型的概率解释/#more">more >></a>
+        
       
 
       
