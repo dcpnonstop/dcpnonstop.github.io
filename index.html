@@ -193,6 +193,19 @@
 <li><a href="#为什么在img标签中使用srcset属性请描述浏览器遇到该属性后的处理过程">为什么在<code>&lt;img&gt;</code>标签中使用<code>srcset</code>属性？请描述浏览器遇到该属性后的处理过程。</a></li>
 <li><a href="#你有过使用不同模版语言的经历吗">你有过使用不同模版语言的经历吗？</a></li>
 </ul>
+<h3 id="DOCTYPE有什么用？"><a href="#DOCTYPE有什么用？" class="headerlink" title="DOCTYPE有什么用？"></a><code>DOCTYPE</code>有什么用？</h3><p><code>DOCTYPE</code>是“document type”的缩写。它是 HTML 中用来区分标准模式和<a href="https://quirks.spec.whatwg.org/#history" target="_blank" rel="external">怪异模式</a>的声明，用来告知浏览器使用标准模式渲染页面。</p>
+<p>从中获得的启发：在页面开始处添加<code>&lt;!DOCTYPE html&gt;</code>即可。</p>
+<h6 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://stackoverflow.com/questions/7695044/what-does-doctype-html-do" target="_blank" rel="external">https://stackoverflow.com/questions/7695044/what-does-doctype-html-do</a></li>
+<li><a href="https://www.w3.org/QA/Tips/Doctype" target="_blank" rel="external">https://www.w3.org/QA/Tips/Doctype</a></li>
+<li><a href="https://quirks.spec.whatwg.org/#history" target="_blank" rel="external">https://quirks.spec.whatwg.org/#history</a></li>
+</ul>
+<h3 id="如何提供包含多种语言内容的页面？"><a href="#如何提供包含多种语言内容的页面？" class="headerlink" title="如何提供包含多种语言内容的页面？"></a>如何提供包含多种语言内容的页面？</h3><p>这个问题有点问得含糊其辞，我认为这是在询问最常见的情况：如何提供包含多种语言内容的页面，并保证页面内容语言的一致性。</p>
+<p>当客户端向服务器发送 HTTP 请求时，通常会发送有关语言首选项的信息，比如使用<code>Accept-Language</code>请求头。如果替换语言存在，服务器可以利用该信息返回与之相匹配的 HTML 文档。返回的 HTML 文档还应在<code>&lt;html&gt;</code>标签中声明<code>lang</code>属性，比如<code>&lt;html lang=&quot;en&quot;&gt;...&lt;/html&gt;</code></p>
+<p>在后台中，HTML 将包含<code>i18n</code>占位符和待以替换的内容，这些按照不同语言，以 YML 或 JSON 格式存储。然后，服务器将动态生成指定语言内容的 HTML 页面。整个过程通常需要借助后台框架实现。</p>
+<h6 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://www.w3.org/International/getting-started/language" target="_blank" rel="external">https://www.w3.org/International/getting-started/language</a></li>
+</ul>
 
       
 
