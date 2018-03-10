@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/10/html问题总结/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="HTML 问题本章节是前端开发者面试问题 - HTML 部分的参考答案。 欢迎提出 PR 进行建议和指正！  DOCTYPE有什么用？ 如何提供包含多种语言内容的页面？ 在设计开发多语言网站时，需要留心哪些事情？ 什么是data-属性？ 将 HTML5 看作成开放的网络平台，什么是 HTML5 的基本构件（building block）？ 请描述cookie、sessionStorage和loca">
-<meta property="og:updated_time" content="2018-03-10T07:43:27.858Z">
+<meta property="og:updated_time" content="2018-03-10T07:49:58.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html问题总结">
 <meta name="twitter:description" content="HTML 问题本章节是前端开发者面试问题 - HTML 部分的参考答案。 欢迎提出 PR 进行建议和指正！  DOCTYPE有什么用？ 如何提供包含多种语言内容的页面？ 在设计开发多语言网站时，需要留心哪些事情？ 什么是data-属性？ 将 HTML5 看作成开放的网络平台，什么是 HTML5 的基本构件（building block）？ 请描述cookie、sessionStorage和loca">
@@ -210,10 +210,22 @@
 <h6 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="https://www.w3.org/International/getting-started/language" target="_blank" rel="external">https://www.w3.org/International/getting-started/language</a></li>
 </ul>
-<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="在设计开发多语言网站时，需要留心哪些事情？"><a href="#在设计开发多语言网站时，需要留心哪些事情？" class="headerlink" title="在设计开发多语言网站时，需要留心哪些事情？"></a>在设计开发多语言网站时，需要留心哪些事情？</h3><ul>
+<li>在 HTML 中使用<code>lang</code>属性。</li>
+<li>引导用户切换到自己的母语——让用户能够轻松地切换到自己的国家或语言，而不用麻烦。</li>
+<li>在图片中展示文本会阻碍网站规模增长——把文本放在图片中展示，仍然是一种非常流行的方式。这样做可以在所有终端上，都能显示出美观的非系统字体。然而，为了翻译图片中的文本，需要为每种语言单独创建对应的图片，这种做法很容易在图片数量不断增长的过程中失控。</li>
+<li>限制词语或句子的长度——网页内容在使用其他语言表述时，文字长度会发生变化。设计时，需要警惕文字长度溢出布局的问题，最好不要使用受文字长度影响较大的设计。比如标题、标签、按钮的设计，往往很受文字长度影响，这些设计中的文字与正文或评论部分不同，一般不可以自由换行。</li>
+<li>注意颜色的使用——颜色在不同的语言和文化中，意义和感受是不同的。设计时应该使用恰当的颜色。</li>
+<li>日期和货币的格式化——日期在不同的国家和地区，会以不同的方式显示。</li>
+<li>不要使用连接的翻译字符串——不要做类似这样的事情。这样做可能会打乱其他语言的语序。替代方案是，为每种语言编写带变量替换的模版字符串。可以看到，语言的语法规则不同，变量的位置是不同的。</li>
+<li>注意语言阅读的方向——在英语中，文字是从左向右阅读的；而在传统日语中，文字是从右向左阅读的。</li>
+</ul>
+<h6 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://www.quora.com/What-kind-of-things-one-should-be-wary-of-when-designing-or-developing-for-multilingual-sites" target="_blank" rel="external">https://www.quora.com/What-kind-of-things-one-should-be-wary-of-when-designing-or-developing-for-multilingual-sites</a></li>
+</ul>
 <h3 id="什么是data-属性？"><a href="#什么是data-属性？" class="headerlink" title="什么是data-属性？"></a>什么是<code>data-</code>属性？</h3><p>在 JavaScript 框架变得流行之前，前端开发者经常使用<code>data-</code>属性，把额外数据存储在 DOM 自身中。当时没有其他 Hack 手段（比如使用非标准属性或 DOM 上额外属性）。这样做是为了将自定义数据存储到页面或应用中，对此没有其他更适当的属性或元素。</p>
 <p>而现在，不鼓励使用<code>data-</code>属性。原因之一是，用户可以通过在浏览器中利用检查元素，轻松地修改属性值，借此修改数据。数据模型最好存储在 JavaScript 本身中，并利用框架提供的数据绑定，使之与 DOM 保持更新。</p>
-<h6 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h6><ul>
+<h6 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="http://html5doctor.com/html5-custom-data-attributes/" target="_blank" rel="external">http://html5doctor.com/html5-custom-data-attributes/</a></li>
 <li><a href="https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes" target="_blank" rel="external">https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes</a></li>
 </ul>
@@ -228,7 +240,7 @@
 <li>设备访问 - 允许使用各种输入、输出设备。</li>
 <li>外观 - 可以开发丰富的主题。</li>
 </ul>
-<h6 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h6><ul>
+<h6 id="参考-4"><a href="#参考-4" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5</a></li>
 </ul>
 <p><a href="#html-问题">[↑] 回到顶部</a></p>
@@ -287,7 +299,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="参考-4"><a href="#参考-4" class="headerlink" title="参考"></a>参考</h6><ul>
+<h6 id="参考-5"><a href="#参考-5" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies</a></li>
 <li><a href="http://tutorial.techaltum.com/local-and-session-storage.html" target="_blank" rel="external">http://tutorial.techaltum.com/local-and-session-storage.html</a></li>
 </ul>
@@ -298,7 +310,7 @@
 <li><code>&lt;script defer&gt;</code> - 脚本仅提取过程与HTML解析过程并行，脚本的执行将在HTML解析完毕后进行。如果有多个含<code>defer</code>的脚本，脚本的执行顺序将按照在 document 中出现的位置，从上到下顺序执行。</li>
 </ul>
 <p>注意：没有<code>src</code>属性的脚本，<code>async</code>和<code>defer</code>属性会被忽略。</p>
-<h6 id="参考-5"><a href="#参考-5" class="headerlink" title="参考"></a>参考</h6><ul>
+<h6 id="参考-6"><a href="#参考-6" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html" target="_blank" rel="external">http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html</a></li>
 <li><a href="https://stackoverflow.com/questions/10808109/script-tag-async-defer" target="_blank" rel="external">https://stackoverflow.com/questions/10808109/script-tag-async-defer</a></li>
 <li><a href="https://bitsofco.de/async-vs-defer/" target="_blank" rel="external">https://bitsofco.de/async-vs-defer/</a></li>
@@ -309,7 +321,7 @@
 <p><strong>把<code>&lt;script&gt;</code>标签恰好放在<code>&lt;/body&gt;</code>之前</strong></p>
 <p>脚本在下载和执行期间会阻止HTML解析。把<code>&lt;script&gt;</code>标签放在底部，保证HTML首先完成解析，将页面尽早呈现给用户。</p>
 <p>例外情况是当你的脚本里包含<code>document.write()</code>时。但是现在，<code>document.write()</code>不推荐使用。同时，将<code>&lt;script&gt;</code>标签放在底部，意味着浏览器不能开始下载脚本，直到整个文档（document）被解析。也许，对此比较好的做法是，<code>&lt;script&gt;</code>使用<code>defer</code>属性，放在<code>&lt;head&gt;</code>中。</p>
-<h6 id="参考-6"><a href="#参考-6" class="headerlink" title="参考"></a>参考</h6><ul>
+<h6 id="参考-7"><a href="#参考-7" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="https://developer.yahoo.com/performance/rules.html#css_top" target="_blank" rel="external">https://developer.yahoo.com/performance/rules.html#css_top</a></li>
 </ul>
 <p><a href="#html-问题">[↑] 回到顶部</a></p>
@@ -321,7 +333,7 @@
 <li>确定显示内容的优先级（分层次渲染）——为了尽快将页面呈现给用户，页面只包含基本的最少量的CSS、脚本和内容，然后可以使用延迟加载脚本或监听<code>DOMContentLoaded</code>/<code>load</code>事件加载其他资源和内容。</li>
 <li>异步加载HTML片段——当页面通过后台渲染时，把HTML拆分，通过异步请求，分块发送给浏览器。更多相关细节可以在<a href="http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/" target="_blank" rel="external">这里</a>找到。</li>
 </ul>
-<h6 id="参考-7"><a href="#参考-7" class="headerlink" title="参考"></a>参考</h6><ul>
+<h6 id="参考-8"><a href="#参考-8" class="headerlink" title="参考"></a>参考</h6><ul>
 <li><a href="https://stackoverflow.com/questions/33651166/what-is-progressive-rendering" target="_blank" rel="external">https://stackoverflow.com/questions/33651166/what-is-progressive-rendering</a></li>
 <li><a href="http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/" target="_blank" rel="external">http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/</a></li>
 </ul>
@@ -335,7 +347,7 @@
 <li>检查sizes列表中哪个媒体条件是第一个为真</li>
 <li>查看给予该媒体查询的槽大小</li>
 <li><p>加载srcset列表中引用的最接近所选的槽大小的图像</p>
-<h6 id="参考-8"><a href="#参考-8" class="headerlink" title="参考"></a>参考</h6></li>
+<h6 id="参考-9"><a href="#参考-9" class="headerlink" title="参考"></a>参考</h6></li>
 </ol>
 <ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images</a></li>
