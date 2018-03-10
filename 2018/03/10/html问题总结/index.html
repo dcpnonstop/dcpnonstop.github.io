@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/10/html问题总结/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="HTML 问题本章节是前端开发者面试问题 - HTML 部分的参考答案。 欢迎提出 PR 进行建议和指正！  DOCTYPE有什么用？ 如何提供包含多种语言内容的页面？ 在设计开发多语言网站时，需要留心哪些事情？ 什么是data-属性？ 将 HTML5 看作成开放的网络平台，什么是 HTML5 的基本构件（building block）？ 请描述cookie、sessionStorage和loca">
-<meta property="og:updated_time" content="2018-03-10T07:40:43.797Z">
+<meta property="og:updated_time" content="2018-03-10T07:42:10.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html问题总结">
 <meta name="twitter:description" content="HTML 问题本章节是前端开发者面试问题 - HTML 部分的参考答案。 欢迎提出 PR 进行建议和指正！  DOCTYPE有什么用？ 如何提供包含多种语言内容的页面？ 在设计开发多语言网站时，需要留心哪些事情？ 什么是data-属性？ 将 HTML5 看作成开放的网络平台，什么是 HTML5 的基本构件（building block）？ 请描述cookie、sessionStorage和loca">
@@ -217,6 +217,136 @@
 <li><a href="https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes" target="_blank" rel="external">https://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes</a></li>
 </ul>
 <p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="将-HTML5-看作成开放的网络平台，什么是-HTML5-的基本构件（building-block）？"><a href="#将-HTML5-看作成开放的网络平台，什么是-HTML5-的基本构件（building-block）？" class="headerlink" title="将 HTML5 看作成开放的网络平台，什么是 HTML5 的基本构件（building block）？"></a>将 HTML5 看作成开放的网络平台，什么是 HTML5 的基本构件（building block）？</h3><ul>
+<li>语义 - 提供更准确地描述内容。</li>
+<li>连接 - 提供新的方式与服务器通信。</li>
+<li>离线和存储 - 允许网页在本地存储数据并有效地离线运行。</li>
+<li>多媒体 - 在 Open Web 中，视频和音频被视为一等公民（first-class citizens）。</li>
+<li>2D/3D 图形和特效 - 提供更多种演示选项。</li>
+<li>性能和集成 - 提供更快的访问速度和性能更好的计算机硬件。</li>
+<li>设备访问 - 允许使用各种输入、输出设备。</li>
+<li>外观 - 可以开发丰富的主题。</li>
+</ul>
+<h6 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5</a></li>
+</ul>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="请描述cookie、sessionStorage和localStorage的区别。"><a href="#请描述cookie、sessionStorage和localStorage的区别。" class="headerlink" title="请描述cookie、sessionStorage和localStorage的区别。"></a>请描述<code>cookie</code>、<code>sessionStorage</code>和<code>localStorage</code>的区别。</h3><p>上面提到的技术名词，都是在客户端以键值对存储的存储机制，并且只能将值存储为字符串。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>cookie</code></th>
+<th><code>localStorage</code></th>
+<th><code>sessionStorage</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>由谁初始化</td>
+<td>客户端或服务器，服务器可以使用<code>Set-Cookie</code>请求头。</td>
+<td>客户端</td>
+<td>客户端</td>
+</tr>
+<tr>
+<td>过期时间</td>
+<td>手动设置</td>
+<td>永不过期</td>
+<td>当前页面关闭时</td>
+</tr>
+<tr>
+<td>在当前浏览器会话（browser sessions）中是否保持不变</td>
+<td>取决于是否设置了过期时间</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否与域名（domain）相关联</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>是否随着每个 HTTP 请求发送给服务器</td>
+<td>是，Cookies 会通过<code>Cookie</code>请求头，自动发送给服务器</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>容量（每个域名）</td>
+<td>4kb</td>
+<td>5MB</td>
+<td>5MB</td>
+</tr>
+<tr>
+<td>访问权限</td>
+<td>任意窗口</td>
+<td>任意窗口</td>
+<td>当前页面窗口</td>
+</tr>
+</tbody>
+</table>
+<h6 id="参考-4"><a href="#参考-4" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies</a></li>
+<li><a href="http://tutorial.techaltum.com/local-and-session-storage.html" target="_blank" rel="external">http://tutorial.techaltum.com/local-and-session-storage.html</a></li>
+</ul>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="请描述-lt-script-gt-、-lt-script-async-gt-和-lt-script-defer-gt-的区别。"><a href="#请描述-lt-script-gt-、-lt-script-async-gt-和-lt-script-defer-gt-的区别。" class="headerlink" title="请描述&lt;script&gt;、&lt;script async&gt;和&lt;script defer&gt;的区别。"></a>请描述<code>&lt;script&gt;</code>、<code>&lt;script async&gt;</code>和<code>&lt;script defer&gt;</code>的区别。</h3><ul>
+<li><code>&lt;script&gt;</code> - HTML 解析中断，脚本被提取并立即执行。执行结束后，HTML 解析继续。</li>
+<li><code>&lt;script async&gt;</code> - 脚本的提取、执行的过程与HTML解析过程并行，脚本执行完毕可能在HTML解析完毕之前。当脚本与页面上其他脚本独立时，可以使用<code>async</code>，比如用作页面统计分析。</li>
+<li><code>&lt;script defer&gt;</code> - 脚本仅提取过程与HTML解析过程并行，脚本的执行将在HTML解析完毕后进行。如果有多个含<code>defer</code>的脚本，脚本的执行顺序将按照在 document 中出现的位置，从上到下顺序执行。</li>
+</ul>
+<p>注意：没有<code>src</code>属性的脚本，<code>async</code>和<code>defer</code>属性会被忽略。</p>
+<h6 id="参考-5"><a href="#参考-5" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html" target="_blank" rel="external">http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html</a></li>
+<li><a href="https://stackoverflow.com/questions/10808109/script-tag-async-defer" target="_blank" rel="external">https://stackoverflow.com/questions/10808109/script-tag-async-defer</a></li>
+<li><a href="https://bitsofco.de/async-vs-defer/" target="_blank" rel="external">https://bitsofco.de/async-vs-defer/</a></li>
+</ul>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="为什么最好把CSS的-lt-link-gt-标签放在-lt-head-gt-lt-head-gt-之间？为什么最好把JS的-lt-script-gt-标签恰好放在-lt-body-gt-之前，有例外情况吗？"><a href="#为什么最好把CSS的-lt-link-gt-标签放在-lt-head-gt-lt-head-gt-之间？为什么最好把JS的-lt-script-gt-标签恰好放在-lt-body-gt-之前，有例外情况吗？" class="headerlink" title="为什么最好把CSS的&lt;link&gt;标签放在&lt;head&gt;&lt;/head&gt;之间？为什么最好把JS的&lt;script&gt;标签恰好放在&lt;/body&gt;之前，有例外情况吗？"></a>为什么最好把CSS的<code>&lt;link&gt;</code>标签放在<code>&lt;head&gt;&lt;/head&gt;</code>之间？为什么最好把JS的<code>&lt;script&gt;</code>标签恰好放在<code>&lt;/body&gt;</code>之前，有例外情况吗？</h3><p><strong>把<code>&lt;link&gt;</code>放在<code>&lt;head&gt;</code>中</strong></p>
+<p>把<code>&lt;link&gt;</code>标签放在<code>&lt;head&gt;&lt;/head&gt;</code>之间是规范要求的内容。此外，这种做法可以让页面逐步呈现，提高了用户体验。将样式表放在文档底部附近，会使许多浏览器（包括Internet Explorer）不能逐步呈现页面。一些浏览器会阻止渲染，以避免在页面样式发生变化时，重新绘制页面中的元素。这种做法可以防止呈现给用户空白的页面或没有样式的内容。</p>
+<p><strong>把<code>&lt;script&gt;</code>标签恰好放在<code>&lt;/body&gt;</code>之前</strong></p>
+<p>脚本在下载和执行期间会阻止HTML解析。把<code>&lt;script&gt;</code>标签放在底部，保证HTML首先完成解析，将页面尽早呈现给用户。</p>
+<p>例外情况是当你的脚本里包含<code>document.write()</code>时。但是现在，<code>document.write()</code>不推荐使用。同时，将<code>&lt;script&gt;</code>标签放在底部，意味着浏览器不能开始下载脚本，直到整个文档（document）被解析。也许，对此比较好的做法是，<code>&lt;script&gt;</code>使用<code>defer</code>属性，放在<code>&lt;head&gt;</code>中。</p>
+<h6 id="参考-6"><a href="#参考-6" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://developer.yahoo.com/performance/rules.html#css_top" target="_blank" rel="external">https://developer.yahoo.com/performance/rules.html#css_top</a></li>
+</ul>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="什么是渐进式渲染（progressive-rendering）？"><a href="#什么是渐进式渲染（progressive-rendering）？" class="headerlink" title="什么是渐进式渲染（progressive rendering）？"></a>什么是渐进式渲染（progressive rendering）？</h3><p>渐进式渲染是用于提高网页性能（尤其是提高用户感知的加载速度），以尽快呈现页面的技术。</p>
+<p>在以前互联网带宽较小的时期，这种技术更为普遍。如今，移动终端的盛行，而移动网络往往不稳定，渐进式渲染在现代前端开发中仍然有用武之地。</p>
+<p>一些举例：</p>
+<ul>
+<li>图片懒加载——页面上的图片不会一次性全部加载。当用户滚动页面到图片部分时，JavaScript将加载并显示图像。</li>
+<li>确定显示内容的优先级（分层次渲染）——为了尽快将页面呈现给用户，页面只包含基本的最少量的CSS、脚本和内容，然后可以使用延迟加载脚本或监听<code>DOMContentLoaded</code>/<code>load</code>事件加载其他资源和内容。</li>
+<li>异步加载HTML片段——当页面通过后台渲染时，把HTML拆分，通过异步请求，分块发送给浏览器。更多相关细节可以在<a href="http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/" target="_blank" rel="external">这里</a>找到。</li>
+</ul>
+<h6 id="参考-7"><a href="#参考-7" class="headerlink" title="参考"></a>参考</h6><ul>
+<li><a href="https://stackoverflow.com/questions/33651166/what-is-progressive-rendering" target="_blank" rel="external">https://stackoverflow.com/questions/33651166/what-is-progressive-rendering</a></li>
+<li><a href="http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/" target="_blank" rel="external">http://www.ebaytechblog.com/2014/12/08/async-fragments-rediscovering-progressive-html-rendering-with-marko/</a></li>
+</ul>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="为什么在-lt-img-gt-标签中使用srcset属性？请描述浏览器遇到该属性后的处理过程。"><a href="#为什么在-lt-img-gt-标签中使用srcset属性？请描述浏览器遇到该属性后的处理过程。" class="headerlink" title="为什么在&lt;img&gt;标签中使用srcset属性？请描述浏览器遇到该属性后的处理过程。"></a>为什么在<code>&lt;img&gt;</code>标签中使用<code>srcset</code>属性？请描述浏览器遇到该属性后的处理过程。</h3><p>因为需要设计响应式图片。我们可以使用两个新的属性——<code>srcset</code> 和 <code>sizes</code>——来提供更多额外的资源图像和提示，帮助浏览器选择正确的一个资源。</p>
+<p><strong>srcset</strong> 定义了我们允许浏览器选择的图像集，以及每个图像的大小。</p>
+<p><strong>sizes</strong> 定义了一组媒体条件（例如屏幕宽度）并且指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择。</p>
+<p>所以，有了这些属性，浏览器会：</p>
+<ol>
+<li>查看设备宽度</li>
+<li>检查sizes列表中哪个媒体条件是第一个为真</li>
+<li>查看给予该媒体查询的槽大小</li>
+<li><p>加载srcset列表中引用的最接近所选的槽大小的图像</p>
+<h6 id="参考-8"><a href="#参考-8" class="headerlink" title="参考"></a>参考</h6></li>
+</ol>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images</a></li>
+</ul>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="你有过使用不同模版语言的经历吗？"><a href="#你有过使用不同模版语言的经历吗？" class="headerlink" title="你有过使用不同模版语言的经历吗？"></a>你有过使用不同模版语言的经历吗？</h3><p>有过，比如 Pug （以前叫 Jade）、 ERB、 Slim、 Handlebars、 Jinja、 Liquid 等等。在我看来，这些模版语言大多是相似的，都提供了用于展示数据的内容替换和过滤器的功能。大部分模版引擎都支持自定义过滤器，以展示自定义格式的内容。</p>
+<p><a href="#html-问题">[↑] 回到顶部</a></p>
+<h3 id="其它答案"><a href="#其它答案" class="headerlink" title="其它答案"></a>其它答案</h3><ul>
+<li><a href="https://neal.codes/blog/front-end-interview-questions-html/" target="_blank" rel="external">https://neal.codes/blog/front-end-interview-questions-html/</a></li>
+<li><a href="http://peterdoes.it/2015/12/03/a-personal-exercise-front-end-job-interview-questions-and-my-answers-all/" target="_blank" rel="external">http://peterdoes.it/2015/12/03/a-personal-exercise-front-end-job-interview-questions-and-my-answers-all/</a></li>
+</ul>
+<hr>
 
       
 
