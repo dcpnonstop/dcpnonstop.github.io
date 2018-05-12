@@ -6,15 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>12 | 叮当了个和谐</title>
+  <title>叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="12">
+  <meta name="description" content="title: Javacript函数replace详解date: 2018-05-12 17:24:53tags:—技术积累 定义和方法replace()方法用于在字符串中用一些字符串替换另一些字符，或者替换一个与正则表达式匹配的子串。 语法1stringObject.replace(regexp/substr,replacement)  regexp/substr:必需。规定子字符串或要替换的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="叮当了个和谐">
 <meta property="og:url" content="http://yoursite.com/2018/05/12/Javacript函数replace详解/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
-<meta property="og:updated_time" content="2018-05-12T09:24:53.969Z">
+<meta property="og:description" content="title: Javacript函数replace详解date: 2018-05-12 17:24:53tags:—技术积累 定义和方法replace()方法用于在字符串中用一些字符串替换另一些字符，或者替换一个与正则表达式匹配的子串。 语法1stringObject.replace(regexp/substr,replacement)  regexp/substr:必需。规定子字符串或要替换的">
+<meta property="og:updated_time" content="2018-05-12T10:15:28.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="12">
+<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:description" content="title: Javacript函数replace详解date: 2018-05-12 17:24:53tags:—技术积累 定义和方法replace()方法用于在字符串中用一些字符串替换另一些字符，或者替换一个与正则表达式匹配的子串。 语法1stringObject.replace(regexp/substr,replacement)  regexp/substr:必需。规定子字符串或要替换的">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -161,24 +164,36 @@
             <article id="post-Javacript函数replace详解" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      12
-    </h1>
-  
-
-        
-        <a href="/2018/05/12/Javacript函数replace详解/" class="archive-article-date">
-  	<time datetime="2018-05-12T09:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<p>title: Javacript函数replace详解<br>date: 2018-05-12 17:24:53<br>tags:<br>—技术积累</p>
+<h3 id="定义和方法"><a href="#定义和方法" class="headerlink" title="定义和方法"></a><strong>定义和方法</strong></h3><p>replace()方法用于在字符串中用一些字符串替换另一些字符，或者替换一个与正则表达式匹配的子串。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a><strong>语法</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringObject.replace(regexp/substr,replacement)</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="regexp-substr"><a href="#regexp-substr" class="headerlink" title="regexp/substr:"></a>regexp/substr:</h2><p>必需。规定子字符串或要替换的模式的 RegExp 对象。<br>请注意，如果该值是一个字符串，则将它作为要检索的直接量文本模式，而不是首先被转换为 RegExp 对象。</p>
+<h2 id="replacement"><a href="#replacement" class="headerlink" title="replacement:"></a>replacement:</h2><p>必需。一个字符串值。<strong><em>规定了替换文本或生成替换文本的函数</em></strong>。</p>
+<p><strong>函数最后返回一个新的字符串，是用replacement替换了regexp的第一次匹配或所有匹配之后得到的。</strong></p>
+<hr>
+<ul>
+<li>ECMAScript规定，replace()方法的参数replacement可以是函数而不是字符串，在这种情况下，每个匹配都调用该函数，它返回的字符串将替换文本使用。</li>
+<li>函数里的形参有与否，用arguments来指向更为合理，当replacement是函数的时候，其参数个数情况如下：</li>
+</ul>
+<ol>
+<li>如果正则匹配里没有分组匹配，那么函数参数只有三个。</li>
+<li>如果正则匹配有分组匹配，那么函数的参数为3+n，n为分组的个数，不管是否匹配到，如没匹配到，其值为undefined</li>
+</ol>
+<hr>
+<p>####arguments返回参数含义####</p>
+<ol>
+<li>第一个参数表示参数匹配到的字符串</li>
+<li>中间参数为子表达式匹配字符串，个数不限，匹配regexp对象中某个圆括号子表达式的字符串，可能是0个或多个这样的参数</li>
+<li>倒数第二个参数表述匹配到的子字符串在字符串中开始匹配的位置</li>
+<li>最后一个参数调用replace方法的字符串</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var Q=&quot;efabcbdddef&quot;</div><div class="line">Q.replace(/(a)(b)/g, function(i,j,k,q,e)&#123;</div><div class="line">    console.log(i+&apos;|&apos;+j+&apos;|&apos;+k+&apos;|&apos;+q+&apos;|&apos;+e);</div><div class="line">    console.log(arguments[4])</div><div class="line">    console.log(Array.prototype.slice.call(arguments，0);</div><div class="line">&#125;);</div><div class="line">console.log(Q);</div><div class="line"></div><div class="line">》》》》》</div><div class="line"></div><div class="line">ab|a|b|2|efabcbdddef</div><div class="line">&#123; &apos;0&apos;: &apos;ab&apos;, &apos;1&apos;: &apos;a&apos;, &apos;2&apos;: &apos;b&apos;, &apos;3&apos;: 2, &apos;4&apos;: &apos;efabcbdddef&apos; &#125;</div><div class="line">[ &apos;ab&apos;, &apos;a&apos;, &apos;b&apos;, 2, &apos;efabcbdddef&apos; ]</div><div class="line">efabcbdddef</div></pre></td></tr></table></figure>
+<p>在正则表达式中，比如(/(^|\s)([a-z])/g)中$2==(^|\s), $3==([a-z]),大概是这个样子进行匹配的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">function capitialize(str)&#123;</div><div class="line">    return str.replace(/(^|\s)([a-z])/g, function($1, $2, $3)&#123;</div><div class="line">        console.log(arguments);</div><div class="line">        return $2+$3.toUpperCase();</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line">console.log(capitialize(&quot;i am a boy, not a girl!&quot;));</div><div class="line"></div><div class="line">》》》》</div><div class="line"></div><div class="line">&#123; &apos;0&apos;: &apos;i&apos;,</div><div class="line">  &apos;1&apos;: &apos;&apos;,</div><div class="line">  &apos;2&apos;: &apos;i&apos;,</div><div class="line">  &apos;3&apos;: 0,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">&#123; &apos;0&apos;: &apos; a&apos;,</div><div class="line">  &apos;1&apos;: &apos; &apos;,</div><div class="line">  &apos;2&apos;: &apos;a&apos;,</div><div class="line">  &apos;3&apos;: 1,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">&#123; &apos;0&apos;: &apos; a&apos;,</div><div class="line">  &apos;1&apos;: &apos; &apos;,</div><div class="line">  &apos;2&apos;: &apos;a&apos;,</div><div class="line">  &apos;3&apos;: 4,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">&#123; &apos;0&apos;: &apos; b&apos;,</div><div class="line">  &apos;1&apos;: &apos; &apos;,</div><div class="line">  &apos;2&apos;: &apos;b&apos;,</div><div class="line">  &apos;3&apos;: 6,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">&#123; &apos;0&apos;: &apos; n&apos;,</div><div class="line">  &apos;1&apos;: &apos; &apos;,</div><div class="line">  &apos;2&apos;: &apos;n&apos;,</div><div class="line">  &apos;3&apos;: 11,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">&#123; &apos;0&apos;: &apos; a&apos;,</div><div class="line">  &apos;1&apos;: &apos; &apos;,</div><div class="line">  &apos;2&apos;: &apos;a&apos;,</div><div class="line">  &apos;3&apos;: 15,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">&#123; &apos;0&apos;: &apos; g&apos;,</div><div class="line">  &apos;1&apos;: &apos; &apos;,</div><div class="line">  &apos;2&apos;: &apos;g&apos;,</div><div class="line">  &apos;3&apos;: 17,</div><div class="line">  &apos;4&apos;: &apos;i am a boy, not a girl!&apos; &#125;</div><div class="line">I Am A Boy, Not A Girl!</div></pre></td></tr></table></figure></p>
+
       
 
       
@@ -416,11 +431,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">论文写作</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂文</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂文</a>
+                <a href="javascript:void(0)" class="js-tag color5">论文写作</a>
               </li>
             
             <div class="clearfix"></div>
