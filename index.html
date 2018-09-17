@@ -155,6 +155,128 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tcp长连接，短连接，http短轮询长轮询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/">TCP长连接，短连接，HTTP短轮询、长轮询</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/" class="archive-article-date">
+  	<time datetime="2018-09-17T08:48:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##<strong>短连接和长连接：</strong></p>
+<ol>
+<li>常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是应用层协议，而TCP是传输层协议，只有负责传输的这一层才需要建立连接。</li>
+<li>所谓的HTTP支持长连接，其实是基于Keep-Alive请求头约定，从而向下进行长连接发起的一种机制，该连接依然是基于TCP的。</li>
+<li>大多数人都知道HTTP1.0不支持长连接，知道HTTP1.1支持长连接。所谓HTTP1.1及以上支持长连接，并不是HTTP1.1可以建立长连接，而是它支持以请求头的方式进行长连接发起（并且要求客户端与服务端都要具备 ‘Keep-Alive: true’ ）。</li>
+</ol>
+<p> ###<strong>短连接</strong><br> 所谓短连接，及连接只保持在数据传输过程，请求发起，连接建立，数据返回，连接关闭。它适用于一些实时数据请求，配合轮询来进行新旧数据的更替。短连接的流程就是：<strong><em>建立连接-&gt;发送数据-&gt;断开连接</em></strong>。一次发送之后立即断开连接。</p>
+<p> ####<strong>短连接的好处：</strong><br> 既然有长连接了，为什么还需要用短连接的，因为短连接虽然是之前一直使用的，但是长连接保持了连接不被断开，那么如果并发量很好的时候，就会出现问题，所以短连接不用一直占用服务器资源，可以让服务器空出资源来解决其他的连接。<br>银行一般使用短连接。好像是因为：管理起来比较简单，存在的连接就是有用的。</p>
+<p> ###<strong>长连接</strong><br> 长连接便是在连接发起后，在请求关闭连接前客户端与服务端都保持连接，实质是保持这个通信管道，之后便可以对其进行复用。长连接需要注意的是长连接并不是永久连接的。如果一段时间内（具体的时间长短，是可以在header当中进行设置的，也就是所谓的超时时间），这个连接没有HTTP请求发出的话，那么这个长连接就会被断掉。</p>
+<p> 它适用于涉及消息推送，请求频繁的场景（直播，流媒体）。连接建立后，在该连接下的所有请求都可以重用这个长连接管道，避免了频繁了连接请求，提升了效率。<br><img src="https://img-blog.csdn.net/20180917164032858?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1MDczNTQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>  ####<strong>长连接的好处：</strong></p>
+<p>   为什么要用长连接呢？长连接最重要的是可以服用TCP连接，这样减少了每次建立连接和断开连接的开销。所以现在大部分都是长连接，例如一个页面有很多文件，JS文件，CSS文件等等，不能每次都要建立一次连接，所以长连接是比较好的解决办法。</p>
+<p>   长连接不会长时间保持的，如果长时间没有响应，超时会自动断开的。</p>
+<p>  但是如果都保持连接，那么服务器会爆掉，所以TCP连接数量是有限制的。</p>
+<p>   使用长连接之后，客户端、服务端怎么知道本次传输结束呢？两部分：1是判断传输数据是否达到了Content-Length指示的大小；2动态生成的文件没有Content-Length，它是分块传输（chunked），这时候就要根据chunked编码来判断，chunked编码的数据在最后有一个空chunked块，表明本次传输数据结束。</p>
+<p> ###<strong>应用场景区别</strong></p>
+<ol>
+<li>一般长连接（追求实时性高的场景）用于少数client-end to server-end的频繁的通信，例如：数据库的连接用长连接， 如果用短连接频繁的通信会造成socket错误，而且频繁的socket 创建也是对资源的浪费。</li>
+<li>而像WEB网站的http服务一般都用短链接（追求资源易回收场景），因为长连接对于服务端来说会耗费一定的资源，而像WEB网站这么频繁的成千上万甚至上亿客户端的连接用短连接会更省一些资源。</li>
+</ol>
+<hr>
+<hr>
+<p>##<strong>长轮询和短轮询</strong><br>所谓轮询，即是在一个循环周期内不断发起请求来得到数据的机制。只要有请求的地方，都可以实现轮询，譬如各种事件驱动模型。它的长短是在于请求的返回周期。</p>
+<p>###<strong>短轮询</strong><br>短轮询指的是在循环周期内，不断发起请求，每一次请求都立即返回结果，根据新旧数据对比决定是否使用这个结果。</p>
+<p>####<strong>具体实现：</strong><br>前端使用定时器，每间隔一段时间发送请求来获取数据是否更新，这种方式可兼容ie和支持高级浏览器。通常采用 setInterval 或者 setTimeout 实现。<br><img src="https://img-blog.csdn.net/20180917155828516?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1MDczNTQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="短轮询示意图"><br>通过递归的方式，在获取到数据后每隔一定时间再次发送请求，这样虽然无法保证两次请求间隔为指定时间，但是获取的数据顺序得到保证。</p>
+<p>####<strong>缺点：</strong></p>
+<ol>
+<li>页面会出现假死<br>-setTimeout 在等到每次 EventLoop 时，都要判断是否到指定时间，直到时间到再执行函数，一旦遇到页面有大量任务或者返回时间特别耗时，页面就会出现‘假死’</li>
+<li>无用的网络传输<br>-当客户端按固定频率向服务器发起请求，数据可能并没有更新，浪费服务器资源。</li>
+<li>重复发送Http请求，查询目标事件是否完成，优点：编写简单，缺点：浪费带宽和服务器资源 </li>
+</ol>
+<hr>
+<p>###<strong>长轮询</strong><br> 长轮询即是在请求的过程中，若是服务器端数据并没有更新，那么则将这个连接挂起，直到服务器推送新的数据，再返回，然后进入循环周期。</p>
+<p>####<strong>具体实现：</strong><br> 客户端像传统轮询一样从服务端请求数据，服务端会阻塞请求不会立刻返回，直到有数据或超时才返回给客户端，然后关闭连接，客户端处理完响应信息后再向服务器发送新的请求。<br> <img src="https://img-blog.csdn.net/20180917160956921?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1MDczNTQ1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="长轮询示意图"><br> 长轮询解决了频繁的网络请求浪费服务器，资源可以及时返回给浏览器。</p>
+<p>####<strong>缺点：</strong></p>
+<ol>
+<li>保持连接会消耗资源</li>
+<li>服务器没有返回有效数据，程序超时</li>
+<li>在服务端hold住Http请求（死循环或者sleep等等方式），等到目标时间发生，返回Http响应。优点：在无消息的情况下不会频繁的请求，缺点：编写复杂</li>
+</ol>
+<blockquote>
+<p>对于客户端来说，不管是长轮询还是短轮询，客户端的动作都是一样的，就是不停的去请求，不同的是服务端，短轮询情况下服务端每次请求不管有没有变化都会立即返回结果，而长轮询情况下，如果有变化才会立即返回结果，而没有变化的话，则不会再立即给客户端返回结果，直到超时为止。<br>这样一来，客户端的请求次数将会大量减少（这也就意味着节省了网络流量，毕竟每次发请求，都会占用客户端的上传流量和服务端的下载流量），而且也解决了服务端一直疲于接受请求的窘境。<br>但是长轮询也是有坏处的，因为把请求挂起同样会导致资源的浪费，假设还是1000个人停留在某个商品详情页面，那就很有可能服务器这边挂着1000个线程，在不停检测库存量，这依然是有问题的。<br>因此，从这里可以看出，不管是长轮询还是短轮询，都不太适用于客户端数量太多的情况，因为每个服务器所能承载的TCP连接数是有上限的，这种轮询很容易把连接数顶满。之所以举这个例子，只是因为大家肯定都会网购，所以这个例子比较通俗一点。</p>
+</blockquote>
+<hr>
+<p>##<strong>长短轮询和长短连接的区别</strong></p>
+<ol>
+<li>第一个区别是决定的方式，一个TCP连接是否为长连接，是通过设置HTTP的Connection Header来决定的，而且是需要两边都设置才有效。而一种轮询方式是否为长轮询，是根据服务端的处理方式来决定的，与客户端没有关系。</li>
+<li>第二个区别就是实现的方式，连接的长短是通过协议来规定和实现的。而轮询的长短，是服务器通过编程的方式手动挂起请求来实现的。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-有赞一面记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -327,7 +449,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。"><a href="#面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。" class="headerlink" title="面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。 "></a>面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。 </h2>
+        <h2 id="nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。"><a href="#nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。" class="headerlink" title=" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。 "></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面试官不按套路出牌，一上来就问框架方面的，一个小时心力憔悴！！！！！视频面，面试的时候面试官根本不看简历，问的东西基本都是框架源码实现方面的，问了一个框架又去问另外一个框架，然后尬聊了一个小时，面完之后面试官没有直接说我菜，而是把我和他面过的交大，复旦的学生进行了对比，无形的藐视了我一下，感觉很受伤害，所以毫无疑问的凉凉了，大概是最难受的一次面试，秋招之路才开始，希望接下来的面试能够顺利一点，能去现场面的尽量不要视频面吧，美团已经给我留下阴影了。 </h2>
         
           <a class="article-more-a" href="/2018/09/06/美团前端凉面/#more">more >></a>
         
@@ -848,85 +970,6 @@
 
 
   
-    <article id="post-Javacript函数replace参数为函数详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/12/Javacript函数replace参数为函数详解/">Javacript函数replace参数为函数详解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/12/Javacript函数replace参数为函数详解/" class="archive-article-date">
-  	<time datetime="2018-05-12T10:39:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="定义和方法"><a href="#定义和方法" class="headerlink" title="定义和方法"></a><strong>定义和方法</strong></h3><p>replace()方法用于在字符串中用一些字符串替换另一些字符，或者替换一个与正则表达式匹配的子串。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a><strong>语法</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringObject.replace(regexp/substr,replacement)</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="regexp-substr"><a href="#regexp-substr" class="headerlink" title="regexp/substr:"></a>regexp/substr:</h2>
-        
-          <a class="article-more-a" href="/2018/05/12/Javacript函数replace参数为函数详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/12/Javacript函数replace参数为函数详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1032,11 +1075,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂文</a>
+                <a href="javascript:void(0)" class="js-tag color5">论文写作</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">论文写作</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂文</a>
               </li>
             
             <div class="clearfix"></div>
