@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/keep.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/short.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/long.jpg">
-<meta property="og:updated_time" content="2018-09-17T09:00:45.118Z">
+<meta property="og:updated_time" content="2018-09-17T09:04:53.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP长连接，短连接，HTTP短轮询、长轮询">
 <meta name="twitter:description" content="短连接和长连接： 常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是">
@@ -183,10 +183,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="短连接和长连接："><a href="#短连接和长连接：" class="headerlink" title="短连接和长连接："></a><strong>短连接和长连接：</strong></h2><ol>
-<li>常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是应用层协议，而TCP是传输层协议，只有负责传输的这一层才需要建立连接。</li>
+<li><p>常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是应用层协议，而TCP是传输层协议，只有负责传输的这一层才需要建立连接。</p>
+</li>
 <li><p>所谓的HTTP支持长连接，其实是基于Keep-Alive请求头约定，从而向下进行长连接发起的一种机制，该连接依然是基于TCP的。</p>
 </li>
-<li><p>大多数人都知道HTTP1.0不支持长连接，知道HTTP1.1支持长连接。所谓HTTP1.1及以上支持长连接，并不是HTTP1.1可以建立长连接，而是<br>它支持以请求头的方式进行长连接发起（并且要求客户端与服务端都要具备 ‘Keep-Alive: true’ ）。</p>
+<li><p>大多数人都知道HTTP1.0不支持长连接，知道HTTP1.1支持长连接。所谓HTTP1.1及以上支持长连接，并不是HTTP1.1可以建立长连接，而是它支持以请求头的方式进行长连接发起（并且要求客户端与服务端都要具备 ‘Keep-Alive: true’ ）。</p>
 <a id="more"></a>
 <h3 id="短连接"><a href="#短连接" class="headerlink" title="短连接"></a><strong>短连接</strong></h3><p>所谓短连接，及连接只保持在数据传输过程，请求发起，连接建立，数据返回，连接关闭。它适用于一些实时数据请求，配合轮询来进行新旧数据的更替。短连接的流程就是：<strong><em>建立连接-&gt;发送数据-&gt;断开连接</em></strong>。一次发送之后立即断开连接。</p>
 <h4 id="短连接的好处："><a href="#短连接的好处：" class="headerlink" title="短连接的好处："></a><strong>短连接的好处：</strong></h4><p>既然有长连接了，为什么还需要用短连接的，因为短连接虽然是之前一直使用的，但是长连接保持了连接不被断开，那么如果并发量很好的时候，就会出现问题，所以短连接不用一直占用服务器资源，可以让服务器空出资源来解决其他的连接。<br>银行一般使用短连接。好像是因为：管理起来比较简单，存在的连接就是有用的。</p>
