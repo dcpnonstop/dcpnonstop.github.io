@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/bt1.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/bt2.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/4.png">
-<meta property="og:updated_time" content="2018-09-22T08:31:26.125Z">
+<meta property="og:updated_time" content="2018-09-22T15:34:12.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字节跳动2019web前端视频面">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/bt1.jpg">
@@ -200,7 +200,52 @@
 <p><strong>第二题：</strong><br>请说出以下代码打印的结果<br>•    if ([] == false) {console.log(1);};<br>•    if ({} == false ) {console.log(2);};<br>•    if ([]) {console.log(3);};<br>•    if ([1] == [1]) {console.log(4);};</p>
 </blockquote>
 <hr>
-<h4 id="TODO-1"><a href="#TODO-1" class="headerlink" title="TODO"></a>TODO</h4><blockquote>
+<p>控制台输出：<br>1 3 2</p>
+<hr>
+<h4 id="TODO-1"><a href="#TODO-1" class="headerlink" title="TODO"></a>TODO</h4><p><strong>原理解释：</strong></p>
+<ol>
+<li>JavaScript里面如果逻辑对象无初始值或者其值为 0、-0、null、””、false、undefined 或者 NaN，那么对象的值为 false。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:right">0</th>
+<th style="text-align:right">-0</th>
+<th style="text-align:right">“”</th>
+<th style="text-align:right">null</th>
+<th style="text-align:right">NaN</th>
+<th style="text-align:right">undefined</th>
+<th style="text-align:center">其他情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean值</td>
+<td style="text-align:right">false</td>
+<td style="text-align:right">false</td>
+<td style="text-align:right">false</td>
+<td style="text-align:right">false</td>
+<td style="text-align:right">false</td>
+<td style="text-align:right">false</td>
+<td style="text-align:center">false</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>空数组[]和空对象{}都是object类型：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(typeof []); // 控制台输出：object</div><div class="line">console.log(typeof &#123;&#125;); // 控制台输出：object</div></pre></td></tr></table></figure>
+<ol>
+<li>空数组[]转化为Number，会得到0；空对象{}转化为Number，会得到NaN：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(Number([])); // 控制台输出0</div><div class="line">console.log(Number(&#123;&#125;)); // 控制台输出NaN</div></pre></td></tr></table></figure>
+<ol>
+<li>关于[]和{}需要注意的点：<br>（1）空数组[]和空对象{}都是object类型，因此直接用于if判断条件时就会被转化为   true。<br>（2）任意值与布尔值比较，都会将两边的值转化为Number。<br>(3)  如果将空数组[]与布尔值false比较，false转化为0，而空数组[]也转化为0，因此[] == false的判断得到true。<br>(4)  如果将空对象{}与布尔值false比较，false转化为0，而空对象{}转化为NaN，由于NaN与任何数都不相等，因此{} == false的判断得到false<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">if ([])</div><div class="line">	console.log(1);</div><div class="line">if (&#123;&#125;)</div><div class="line">	console.log(2);</div><div class="line">if ([] == false)</div><div class="line">	console.log(3);</div><div class="line">if (&#123;&#125; == false) </div><div class="line">控制台输出：1 2 3</div><div class="line">--------------------------------------------------------</div><div class="line">console.log(([0]) ? true : false); // true</div><div class="line">console.log(([0] == false) ? true : false); // true</div><div class="line">console.log((&#123;x:0&#125; == false) ? true : false); // false</div><div class="line">分析：</div><div class="line">[0]直接用于if判断条件时会被转化为true。</div><div class="line">与布尔值比较，都会将两边的值转化为Number，[0]转换为0，&#123;x:0&#125;转换为NaN。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<blockquote>
 <p><strong>第三题：</strong><br>以最小的改动解决以下代码的错误（可以使用es6）<br>const obj = {<br>  name: “ jsCoder”,<br>  skill: [“es6”, “react”, “angular”],<br>  say: function () {<br>    for(var i = 0, len = this.skill.length; i&lt; len; i++){<br>      setTimeout(function(){<br>        console.log(‘No.’ + i + this.name);<br>        console.log(this.skill[i]);<br>        console.log(‘————————–’);<br>      }, 0);<br>      console.log(i);<br>    }<br>  }<br>};<br>obj.say();<br>/<em><br>期望得到下面的结果:<br>1<br>2<br>3<br>No.1 jsCoder<br>es6<br>/————————<br>No.2 jsCoder<br>react<br>/—————————<br>No. 3 jsCoder<br>angular<br>/————————–
 </em>/</p>
 </blockquote>
