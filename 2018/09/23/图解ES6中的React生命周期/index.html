@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>叮当了个和谐</title>
+  <title>图解ES6中的React生命周期 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叮当了个和谐">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="前言 如果将React的生命周期比喻成一只蚂蚁爬过一根吊绳，那么这只蚂蚁从绳头爬到绳尾，就会依次触动不同的卡片挂钩。在React每一个生命周期中，也有类似卡片挂钩的存在，我们把它称之为‘钩子函数’。那么在React的生命周期中，到底有哪些钩子函数？React的生命周期又是怎样的流程？今天我给大家来总结总结">
+<meta name="keywords" content="技术积累">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图解ES6中的React生命周期">
+<meta property="og:url" content="http://yoursite.com/2018/09/23/图解ES6中的React生命周期/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
+<meta property="og:description" content="前言 如果将React的生命周期比喻成一只蚂蚁爬过一根吊绳，那么这只蚂蚁从绳头爬到绳尾，就会依次触动不同的卡片挂钩。在React每一个生命周期中，也有类似卡片挂钩的存在，我们把它称之为‘钩子函数’。那么在React的生命周期中，到底有哪些钩子函数？React的生命周期又是怎样的流程？今天我给大家来总结总结">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/gouzi.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/sum.png">
+<meta property="og:updated_time" content="2018-09-23T12:57:09.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:title" content="图解ES6中的React生命周期">
+<meta name="twitter:description" content="前言 如果将React的生命周期比喻成一只蚂蚁爬过一根吊绳，那么这只蚂蚁从绳头爬到绳尾，就会依次触动不同的卡片挂钩。在React每一个生命周期中，也有类似卡片挂钩的存在，我们把它称之为‘钩子函数’。那么在React的生命周期中，到底有哪些钩子函数？React的生命周期又是怎样的流程？今天我给大家来总结总结">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/gouzi.jpg">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -157,497 +165,101 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-6步学会朴素贝叶斯算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-图解ES6中的React生命周期" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/30/6步学会朴素贝叶斯算法/">6步学会朴素贝叶斯算法</a>
+    <h1 class="article-title" itemprop="name">
+      图解ES6中的React生命周期
     </h1>
   
 
         
-        <a href="/2017/11/30/6步学会朴素贝叶斯算法/" class="archive-article-date">
-  	<time datetime="2017-11-30T14:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
+        <a href="/2018/09/23/图解ES6中的React生命周期/" class="archive-article-date">
+  	<time datetime="2018-09-23T12:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="6步学会朴素贝叶斯算法（包含python语言和R语言源码）"><a href="#6步学会朴素贝叶斯算法（包含python语言和R语言源码）" class="headerlink" title="6步学会朴素贝叶斯算法（包含python语言和R语言源码）"></a><strong>6步学会朴素贝叶斯算法（包含python语言和R语言源码）</strong></h1><hr>
-<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h3><p>假设你遇到下面这种情况：<br>你正在研究分类问题，并且你已经生成了你的假设集，创建了特征值，讨论了变量的重要性。在一个小时内，利益相关者希望看到模型的第一个切割。<br><img src="http://img.blog.csdn.net/20171201154508894?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjUwNzM1NDU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="11"><br>
-        
-          <a class="article-more-a" href="/2017/11/30/6步学会朴素贝叶斯算法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/30/6步学会朴素贝叶斯算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-平滑处理-拉普拉斯（laplace）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/24/平滑处理-拉普拉斯（laplace）/">平滑处理--拉普拉斯（Laplace Smoothing）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/24/平滑处理-拉普拉斯（laplace）/" class="archive-article-date">
-  	<time datetime="2017-11-24T01:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>拉普拉斯平滑（Laplace Smoothing）又被称为加 1 平滑，是比较常用的平滑方法。平滑方法的存在时为了解决零概率问题。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-        
-          <a class="article-more-a" href="/2017/11/24/平滑处理-拉普拉斯（laplace）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/24/平滑处理-拉普拉斯（laplace）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-调用微博API获取微博内容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/17/调用微博API获取微博内容/">调用微博API获取微博内容</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/17/调用微博API获取微博内容/" class="archive-article-date">
-  	<time datetime="2017-11-17T08:50:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="调用微博API获取微博内容"><a href="#调用微博API获取微博内容" class="headerlink" title="调用微博API获取微博内容"></a><strong>调用微博API获取微博内容</strong></h1><p>在采集微博数据的时候，可以利用微博的API来进行调用。在调用微博APi的时候需要做两项工作，第一步是创建应用，第二步是安装微博SDK.<br>
-        
-          <a class="article-more-a" href="/2017/11/17/调用微博API获取微博内容/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/17/调用微博API获取微博内容/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-文件数据和文件元数据详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/21/文件数据和文件元数据详解/">文件数据和文件元数据详解</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/21/文件数据和文件元数据详解/" class="archive-article-date">
-  	<time datetime="2017-10-21T08:37:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://dcpnonstop.github.io/blogimg/1021.png" alt="image"></p>
-<h1 id="file-data-and-file-metadata"><a href="#file-data-and-file-metadata" class="headerlink" title="file data and file metadata"></a><strong>file data and file metadata</strong></h1>
-        
-          <a class="article-more-a" href="/2017/10/21/文件数据和文件元数据详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/21/文件数据和文件元数据详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-雨天的周末" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/15/雨天的周末/">雨天杂记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/15/雨天的周末/" class="archive-article-date">
-  	<time datetime="2017-10-15T14:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://dcpnonstop.github.io/blogimg/autum2.JPG" alt="image"></p>
-        
-          <a class="article-more-a" href="/2017/10/15/雨天的周末/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/15/雨天的周末/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何把本地项目上传到Github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/15/如何把本地项目上传到Github/">如何把本地项目上传到Github</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/15/如何把本地项目上传到Github/" class="archive-article-date">
-  	<time datetime="2017-10-15T13:40:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="如何把本地项目上传到Github"><a href="#如何把本地项目上传到Github" class="headerlink" title="如何把本地项目上传到Github"></a><strong>如何把本地项目上传到Github</strong></h1><p>作为一个有追求的程序员，需要撸点自己的开源项目，虽然我现在只是在学着造轮子，但这并不影响我成为大神的心。<br>Github是基于git实现的代码托管，很多程序员在上面托管自己的开源项目，我使用Github也不短时间了，不过之前并没有托管代码，只是下载各位大牛的代码用来学习。希望以后也有很多人下载我的代码，这也算是我作为一个程序员纯洁的追求吧~<br>
-        
-          <a class="article-more-a" href="/2017/10/15/如何把本地项目上传到Github/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/15/如何把本地项目上传到Github/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-献给写作者的 Markdown 新手指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/14/献给写作者的 Markdown 新手指南/">献给写作者的 Markdown 新手指南</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/14/献给写作者的 Markdown 新手指南/" class="archive-article-date">
-  	<time datetime="2017-10-14T06:09:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="献给写作者的-Markdown-新手指南"><a href="#献给写作者的-Markdown-新手指南" class="headerlink" title="献给写作者的 Markdown 新手指南"></a><strong>献给写作者的 Markdown 新手指南</strong></h1><p><a href="http://blog.csdn.net/column.html" target="_blank" rel="external">「CSDN」</a>作为一款「写作软件」在诞生之初就支持了 Markdown，Markdown 是一种「电子邮件」风格的「标记语言」，我们强烈推荐所有写作者学习和掌握该语言。为什么？可以参考:</p>
-<ul>
-<li><a href="http://www.jianshu.com/p/qqGjLN" target="_blank" rel="external">『为什么作家应该用 Markdown 保存自己的文稿』</a>。</li>
-<li><a href="http://www.jianshu.com/p/PpDNMG" target="_blank" rel="external">『Markdown写作浅谈』</a><h4 id="在此，我们总结-Markdown-的优点如下："><a href="#在此，我们总结-Markdown-的优点如下：" class="headerlink" title="在此，我们总结 Markdown 的优点如下："></a>在此，我们总结 Markdown 的优点如下：</h4></li>
+        <p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/gouzi.jpg" alt="狗子"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>如果将React的生命周期比喻成一只蚂蚁爬过一根吊绳，那么这只蚂蚁从绳头爬到绳尾，就会依次触动不同的卡片挂钩。在React每一个生命周期中，也有类似卡片挂钩的存在，我们把它称之为‘钩子函数’。那么在React的生命周期中，到底有哪些钩子函数？React的生命周期又是怎样的流程？今天我给大家来总结总结<br><a id="more"></a></p>
+<h1 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h1><p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/sum.png" alt="liucheng "></p>
+<p>如图，React生命周期主要包括三个阶段：<strong>初始化阶段、运行中阶段和销毁阶段</strong>，在React不同的生命周期里，会依次触发不同的钩子函数，下面我们就来详细介绍一下React的生命周期函数。</p>
+</blockquote>
+<hr>
+<h4 id="一、初始化阶段："><a href="#一、初始化阶段：" class="headerlink" title="一、初始化阶段："></a><strong>一、初始化阶段：</strong></h4><ul>
+<li>getDefaultProps:获取实例的默认属性  getInitialState:获取每个实例的初始化状态 <ul>
+<li>componentWillMount：组件即将被装载、渲染到页面上  </li>
+<li>render:组件在这里生成虚拟的DOM节点 </li>
+<li>componentDidMount:组件真正在被装载之后[AJAX请求]</li>
 </ul>
-        
-          <a class="article-more-a" href="/2017/10/14/献给写作者的 Markdown 新手指南/#more">more >></a>
-        
+</li>
+</ul>
+<h4 id="二、运行中状态："><a href="#二、运行中状态：" class="headerlink" title="二、运行中状态："></a><strong>二、运行中状态：</strong></h4><ul>
+<li>componentWillReceiveProps:组件将要接收到属性的时候调用 </li>
+<li>shouldComponentUpdate:组件接受到新属性或者新状态的时候（可以返回false，接收数据后不更新，阻止render调用，后面的函数不会被继续执行了）</li>
+<li>componentWillUpdate:组件即将更新不能修改属性和状态  </li>
+<li>render:组件重新描绘 </li>
+<li>componentDidUpdate:组件已经更新</li>
+</ul>
+<h4 id="三、销毁阶段："><a href="#三、销毁阶段：" class="headerlink" title="三、销毁阶段："></a><strong>三、销毁阶段：</strong></h4><ul>
+<li>componentWillUnmount:组件即将销毁</li>
+</ul>
+<hr>
+<h1 id="一、初始化阶段"><a href="#一、初始化阶段" class="headerlink" title="一、初始化阶段"></a>一、初始化阶段</h1><h4 id="1、设置组件的默认属性"><a href="#1、设置组件的默认属性" class="headerlink" title="1、设置组件的默认属性"></a>1、设置组件的默认属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">static defaultProps = &#123;</div><div class="line">    name: &apos;sls&apos;,</div><div class="line">    age:23</div><div class="line">&#125;;</div><div class="line">//or</div><div class="line">Counter.defaltProps=&#123;name:&apos;sls&apos;&#125;</div></pre></td></tr></table></figure>
+<h4 id="2、设置组件的初始化状态"><a href="#2、设置组件的初始化状态" class="headerlink" title="2、设置组件的初始化状态"></a>2、设置组件的初始化状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">constructor() &#123;</div><div class="line">    super();</div><div class="line">    this.state = &#123;number: 0&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3、componentWillMount"><a href="#3、componentWillMount" class="headerlink" title="3、componentWillMount()"></a>3、componentWillMount()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">组件即将被渲染到页面之前触发，此时可以进行开启定时器、向服务器发送请求等操作</div></pre></td></tr></table></figure>
+<h4 id="4、render"><a href="#4、render" class="headerlink" title="4、render()"></a>4、render()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">组件渲染</div></pre></td></tr></table></figure>
+<h4 id="5、componentDidMount"><a href="#5、componentDidMount" class="headerlink" title="5、componentDidMount()"></a>5、componentDidMount()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">组件已经被渲染到页面中后触发：此时页面中有了真正的DOM的元素，可以进行DOM相关的操作</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这里是引用</p>
+</blockquote>
+<h2 id="—"><a href="#—" class="headerlink" title="—"></a>—</h2><h1 id="二、运行中阶段"><a href="#二、运行中阶段" class="headerlink" title="二、运行中阶段"></a>二、运行中阶段</h1><h4 id="1、componentWillReceiveProps"><a href="#1、componentWillReceiveProps" class="headerlink" title="1、componentWillReceiveProps()"></a>1、componentWillReceiveProps()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">组件接收到属性时触发</div></pre></td></tr></table></figure>
+<h4 id="2、shouldComponentUpdate"><a href="#2、shouldComponentUpdate" class="headerlink" title="2、shouldComponentUpdate()"></a>2、shouldComponentUpdate()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">当组件接收到新属性，或者组件的状态发生改变时触发。组件首次渲染时并不会触发</div><div class="line">shouldComponentUpdate(newProps, newState) &#123;</div><div class="line">    if (newProps.number &lt; 5) return true;</div><div class="line">    return false</div><div class="line">&#125;</div><div class="line">//该钩子函数可以接收到两个参数，新的属性和状态，返回true/false来控制组件是否需要更新。</div></pre></td></tr></table></figure>
+<p><strong>一般我们通过该函数来优化性能：</strong></p>
+<ol>
+<li>一个React项目需要更新一个小组件时，很可能需要父组件更新自己的状态。而一个父组件的重新更新会造成它旗下所有的子组件重新执行render()方法，形成新的虚拟DOM，再用diff算法对新旧虚拟DOM进行结构和属性的比较，决定组件是否需要重新渲染</li>
+<li>无疑这样的操作会造成很多的性能浪费，所以我们开发者可以根据项目的业务逻辑，在shouldComponentUpdate()中加入条件判断，从而优化性能</li>
+<li>例如React中的就提供了一个PureComponent的类，当我们的组件继承于它时，组件更新时就会默认先比较新旧属性和状态，从而决定组件是否更新。值得注意的是，PureComponent进行的是浅比较，所以组件状态或属性改变时，都需要返回一个新的对象或数组</li>
+</ol>
+<h4 id="3、componentWillUpdate"><a href="#3、componentWillUpdate" class="headerlink" title="3、componentWillUpdate()"></a>3、componentWillUpdate()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">组件即将被更新时触发</div></pre></td></tr></table></figure>
+<h4 id="4、componentDidUpdate"><a href="#4、componentDidUpdate" class="headerlink" title="4、componentDidUpdate()"></a>4、componentDidUpdate()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">组件被更新完成后触发。页面中产生了新的DOM的元素，可以进行DOM操作</div></pre></td></tr></table></figure>
+<h2 id="—-1"><a href="#—-1" class="headerlink" title="—"></a>—</h2><h1 id="三、销毁阶段"><a href="#三、销毁阶段" class="headerlink" title="三、销毁阶段"></a>三、销毁阶段</h1><h4 id="1、componentWillUnmount"><a href="#1、componentWillUnmount" class="headerlink" title="1、componentWillUnmount()"></a>1、componentWillUnmount()</h4><h2 id="gt-组件被销毁时触发。这里我们可以进行一些清理操作，例如清理定时器，取消Redux的订阅事件等等。"><a href="#gt-组件被销毁时触发。这里我们可以进行一些清理操作，例如清理定时器，取消Redux的订阅事件等等。" class="headerlink" title="&gt; 组件被销毁时触发。这里我们可以进行一些清理操作，例如清理定时器，取消Redux的订阅事件等等。"></a>&gt; 组件被销毁时触发。这里我们可以进行一些清理操作，例如清理定时器，取消Redux的订阅事件等等。</h2><hr>
+<h3 id="有兴趣的同学也可以用下面的代码进行测试"><a href="#有兴趣的同学也可以用下面的代码进行测试" class="headerlink" title="有兴趣的同学也可以用下面的代码进行测试"></a>有兴趣的同学也可以用下面的代码进行测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;</div><div class="line">import ReactDOM from &apos;react-dom&apos;;</div><div class="line"></div><div class="line">class SubCounter extends React.Component &#123;</div><div class="line">    componentWillReceiveProps() &#123;</div><div class="line">        console.log(&apos;9、子组件将要接收到新属性&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    shouldComponentUpdate(newProps, newState) &#123;</div><div class="line">        console.log(&apos;10、子组件是否需要更新&apos;);</div><div class="line">        if (newProps.number &lt; 5) return true;</div><div class="line">        return false</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillUpdate() &#123;</div><div class="line">        console.log(&apos;11、子组件将要更新&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentDidUpdate() &#123;</div><div class="line">        console.log(&apos;13、子组件更新完成&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillUnmount() &#123;</div><div class="line">        console.log(&apos;14、子组件将卸载&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        console.log(&apos;12、子组件挂载中&apos;);</div><div class="line">        return (</div><div class="line">                &lt;p&gt;&#123;this.props.number&#125;&lt;/p&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Counter extends React.Component &#123;</div><div class="line">    static defaultProps = &#123;</div><div class="line">        //1、加载默认属性</div><div class="line">        name: &apos;sls&apos;,</div><div class="line">        age:23</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    constructor() &#123;</div><div class="line">        super();</div><div class="line">        //2、加载默认状态</div><div class="line">        this.state = &#123;number: 0&#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillMount() &#123;</div><div class="line">        console.log(&apos;3、父组件挂载之前&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentDidMount() &#123;</div><div class="line">        console.log(&apos;5、父组件挂载完成&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    shouldComponentUpdate(newProps, newState) &#123;</div><div class="line">        console.log(&apos;6、父组件是否需要更新&apos;);</div><div class="line">        if (newState.number&lt;15) return true;</div><div class="line">        return false</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentWillUpdate() &#123;</div><div class="line">        console.log(&apos;7、父组件将要更新&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    componentDidUpdate() &#123;</div><div class="line">        console.log(&apos;8、父组件更新完成&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    handleClick = () =&gt; &#123;</div><div class="line">        this.setState(&#123;</div><div class="line">            number: this.state.number + 1</div><div class="line">        &#125;)</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        console.log(&apos;4、render(父组件挂载)&apos;);</div><div class="line">        return (</div><div class="line">            &lt;div&gt;</div><div class="line">                &lt;p&gt;&#123;this.state.number&#125;&lt;/p&gt;</div><div class="line">                &lt;button onClick=&#123;this.handleClick&#125;&gt;+&lt;/button&gt;</div><div class="line">                &#123;this.state.number&lt;10?&lt;SubCounter number=&#123;this.state.number&#125;/&gt;:null&#125;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">ReactDOM.render(&lt;Counter/&gt;, document.getElementById(&apos;root&apos;));</div></pre></td></tr></table></figure>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://dcpnonstop.github.io/blogimg/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -658,7 +270,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂文</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
         		</li>
       		
 		</ul>
@@ -667,16 +279,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/14/献给写作者的 Markdown 新手指南/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/09/23/图解ES6中的React生命周期/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/22/字节跳动2019web前端视频面/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">字节跳动2019web前端视频面</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -696,231 +367,25 @@
 
 
 
-
-  
-    <article id="post-写在奶奶离开之际" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/13/写在奶奶离开之际/">写在奶奶离开之际</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/13/写在奶奶离开之际/" class="archive-article-date">
-  	<time datetime="2017-10-13T12:58:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;“至亲离去的那一瞬间通常不会使人感到悲伤，而真正会让你感到悲痛的是打开冰箱的那半盒牛奶、那窗台上随风微曳的绿箩、那安静折叠在床上的绒被，还有那深夜里洗衣机传来的阵阵喧哗。”</p>
-<h3 id="emsp-emsp-这句话扑面而来的画面感，一瞬间让我孤独到想哭"><a href="#emsp-emsp-这句话扑面而来的画面感，一瞬间让我孤独到想哭" class="headerlink" title="&emsp;&emsp;这句话扑面而来的画面感，一瞬间让我孤独到想哭"></a><strong>&emsp;&emsp;这句话扑面而来的画面感，一瞬间让我孤独到想哭</strong></h3><p>   <img src="https://dcpnonstop.github.io/blogimg/sad1.gif" alt="image"><br>
-        
-          <a class="article-more-a" href="/2017/10/13/写在奶奶离开之际/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/13/写在奶奶离开之际/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-欢迎使用CSDN-markdown编辑器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/13/欢迎使用CSDN-markdown编辑器/">欢迎使用Markdown编辑器写博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/13/欢迎使用CSDN-markdown编辑器/" class="archive-article-date">
-  	<time datetime="2017-10-13T06:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/test.JPG" alt="image"></p>
-        
-          <a class="article-more-a" href="/2017/10/13/欢迎使用CSDN-markdown编辑器/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/13/欢迎使用CSDN-markdown编辑器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-10-13T03:32:53.995Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
-        
-          <a class="article-more-a" href="/2017/10/13/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/13/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/09/23/图解ES6中的React生命周期/", 
+    sourceId: "图解ES6中的React生命周期",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
   
 
 
@@ -943,8 +408,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
