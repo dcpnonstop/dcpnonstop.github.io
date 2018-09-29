@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/09/29/JavaScript中this指向详解/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="this到底是什么？  this实际上是在函数调用时发生的绑定，它指向什么完全取决于函数在哪里被调用（起决于函数的调用位置） 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。this就是这个记录的一个属性，会在函数执行的过程中用到。">
-<meta property="og:updated_time" content="2018-09-29T09:00:27.858Z">
+<meta property="og:updated_time" content="2018-09-29T09:05:16.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中this指向详解">
 <meta name="twitter:description" content="this到底是什么？  this实际上是在函数调用时发生的绑定，它指向什么完全取决于函数在哪里被调用（起决于函数的调用位置） 当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。this就是这个记录的一个属性，会在函数执行的过程中用到。">
@@ -189,8 +189,8 @@
 </ol>
 <hr>
 <a id="more"></a>
-<h4 id="this的确定"><a href="#this的确定" class="headerlink" title="this的确定:"></a>this的确定:</h4></blockquote>
-<ol>
+</blockquote>
+<h4 id="this的确定"><a href="#this的确定" class="headerlink" title="this的确定:"></a>this的确定:</h4><ol>
 <li>情况1，如果一个函数中有 this，但是它没有被上一级的对象所调用，那么this的指向就是window，这里需要说明的是在js严格版本中this的指向不是window</li>
 <li>情况2，如果一个函数中有this，这个函数有被上一级的对象所调用，那么this指向的就是上一级的对象</li>
 <li>情况3，如果一个函数中有this，这个函数中包含多个对象，尽管这个函数是被最外层的对象调用，this指向的也只是它上一级的对象</li>
