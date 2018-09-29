@@ -159,6 +159,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript中this指向详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/29/JavaScript中this指向详解/">JavaScript中this指向详解</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/29/JavaScript中this指向详解/" class="archive-article-date">
+  	<time datetime="2018-09-29T08:12:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="this到底是什么？"><a href="#this到底是什么？" class="headerlink" title="this到底是什么？"></a>this到底是什么？</h4><blockquote>
+<ol>
+<li>this实际上是在函数调用时发生的绑定，它指向什么完全取决于函数在哪里被调用（起决于函数的调用位置）</li>
+<li>当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。this就是这个记录的一个属性，会在函数执行的过程中用到。</li>
+</ol>
+<hr>
+        
+          <a class="article-more-a" href="/2018/09/29/JavaScript中this指向详解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/29/JavaScript中this指向详解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript闭包详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -835,87 +916,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/09/19/Personal-resume/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tcp长连接，短连接，http短轮询长轮询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/">TCP长连接，短连接，HTTP短轮询、长轮询</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/" class="archive-article-date">
-  	<time datetime="2018-09-17T08:48:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="短连接和长连接："><a href="#短连接和长连接：" class="headerlink" title="短连接和长连接："></a><strong>短连接和长连接：</strong></h2><ol>
-<li><p>常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是应用层协议，而TCP是传输<br>层协议，只有负责传输的这一层才需要建立连接。</p>
-</li>
-<li><p>所谓的HTTP支持长连接，其实是基于Keep-Alive请求头约定，从而向下进行长连接发起的一种机制，该连接依然是基于TCP的。</p>
-</li>
-<li><p>大多数人都知道HTTP1.0不支持长连接，知道HTTP1.1支持长连接。所谓HTTP1.1及以上支持长连接，并不是HTTP1.1可以建立长连接，而是它支持以请求头的方式进行长连接发起（并且要求客户端与服务端都要具备 ‘Keep-Alive: true’ ）。</p>
-        
-          <a class="article-more-a" href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/">展开全文 >></a>
         </p>
       
 
