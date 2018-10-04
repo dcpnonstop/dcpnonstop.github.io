@@ -6,14 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 技术积累 | 叮当了个和谐</title>
+  <title>flex布局学习 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叮当了个和谐">
-<meta property="og:url" content="http://yoursite.com/tags/技术积累/index.html">
+  <meta name="description" content="关于flex布局 学习 Flex 布局，你只要学习几个 CSS 属性，就可以写出简洁优雅复杂的页面布局。">
+<meta name="keywords" content="技术积累">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex布局学习">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/flex布局学习/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
+<meta property="og:description" content="关于flex布局 学习 Flex 布局，你只要学习几个 CSS 属性，就可以写出简洁优雅复杂的页面布局。">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-4.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-5.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-11.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-demo1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-demo2.jpg">
+<meta property="og:updated_time" content="2018-10-04T12:29:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:title" content="flex布局学习">
+<meta name="twitter:description" content="关于flex布局 学习 Flex 布局，你只要学习几个 CSS 属性，就可以写出简洁优雅复杂的页面布局。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -157,36 +177,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-flex布局学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      flex布局学习
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/04/flex布局学习/" class="archive-article-date">
+
+        
+        <a href="/2018/10/04/flex布局学习/" class="archive-article-date">
   	<time datetime="2018-10-04T12:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/04/flex布局学习/">flex布局学习</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="关于flex布局"><a href="#关于flex布局" class="headerlink" title="关于flex布局"></a>关于flex布局</h1><blockquote>
+<p>学习 Flex 布局，你只要学习几个 CSS 属性，就可以写出简洁优雅复杂的页面布局。<br><a id="more"></a><br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-1.jpg" alt="fle"></p>
+</blockquote>
+<h2 id="Flex布局是什么？"><a href="#Flex布局是什么？" class="headerlink" title="Flex布局是什么？"></a>Flex布局是什么？</h2><p>在 flex 容器中默认存在两条轴，水平主轴(main axis) 和垂直的交叉轴(cross axis)，这是默认的设置，当然你可以通过修改使垂直方向变为主轴，水平方向变为交叉轴，这个我们后面再说。</p>
+<p>在容器中的每个单元块被称之为 flex item，每个项目占据的主轴空间为 (main size), 占据的交叉轴的空间为 (cross size)。</p>
+<p>这里需要强调，不能先入为主认为宽度就是 main size，高度就是 cross size，这个还要取决于你主轴的方向，如果你垂直方向是主轴，那么项目的高度就是 main size。</p>
+<p>Flexbox 布局依赖于 flex directions ，简单的说： Flexbox 是一个布局模块，而不是一个属性。采用Flexbox的元素，称为 Flex容器 （flex container），它的所有子元素 （flex item）自动成为容器成员。</p>
+<p>跟 LinearLayout 类似， Flexbox 也存在两个方向的布局：主轴（main axis）和副轴（cross axis也称交叉轴），可以简单的理解为 LinearLayout 的水平布局和垂直布局。主轴的开始位置（与边框的交叉点）叫做 main start ，结束位置叫做main end ；交叉轴的开始位置叫做cross start ，结束位置叫做 cross end 。项目默认沿主轴排列。单个项目占据的主轴空间叫做 main size，占据的交叉轴空间叫做 cross size 。</p>
+<hr>
+<h3 id="Flex-容器："><a href="#Flex-容器：" class="headerlink" title="Flex 容器："></a>Flex 容器：</h3><p>Flexbox是Flexible Box的缩写，意为”弹性布局”，它为盒状模型提供了很大的灵活性，让任何一个容器都可以指定为Flex布局。</p>
+<hr>
+<p>下面代码块分别生成一个块状或行内的 flex 容器盒子。简单说来，如果你使用块元素如 div，你就可以使用 flex，而如果你使用行内元素，你可以使用 inline-flex。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">    display: flex | inline-flex;       //可以有两种取值</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Webkit内核的浏览器，必须加上-webkit前缀。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">  display: -webkit-flex; /* Safari */</div><div class="line">  display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。"><a href="#注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。" class="headerlink" title="注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。"></a><strong>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</strong></h2><h2 id="Flexbox的属性"><a href="#Flexbox的属性" class="headerlink" title="Flexbox的属性"></a>Flexbox的属性</h2><p>Flexbox的属性可以分为 <strong>flex container</strong>属性 和 <strong>flex item</strong> 属性 两类。他们分别对应<strong>父容器</strong>和<strong>子元素</strong>，下面让我们分别看一下他们都是怎么回事。</p>
+<h3 id="1-flex-container-属性（容器的属性）主要包含一下几个方面"><a href="#1-flex-container-属性（容器的属性）主要包含一下几个方面" class="headerlink" title="1. flex container 属性（容器的属性）主要包含一下几个方面"></a>1. flex container 属性（容器的属性）主要包含一下几个方面</h3><ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-content</li>
+<li>align-items</li>
+</ul>
+<h4 id="1-1-flex-direction：属性决定主轴的方向（即项目的排列方向）"><a href="#1-1-flex-direction：属性决定主轴的方向（即项目的排列方向）" class="headerlink" title="1.1 flex-direction：属性决定主轴的方向（即项目的排列方向）"></a>1.1 flex-direction：属性决定主轴的方向（即项目的排列方向）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>有四个值可以选择：</p>
+<ul>
+<li>row(默认值)： 主轴为水平方向，起点在左端</li>
+<li>row-reverse: 主轴为水平方向，起点在右端</li>
+<li>column : 主轴为垂直方向，起点在上沿</li>
+<li>column-reverse: 主轴为垂直方向，起点在下沿<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-2.png" alt="flx"></li>
+</ul>
+<h4 id="1-2-flex-wrap属性：-决定容器内项目是否可换行"><a href="#1-2-flex-wrap属性：-决定容器内项目是否可换行" class="headerlink" title="1.2 flex-wrap属性： 决定容器内项目是否可换行"></a>1.2 flex-wrap属性： 决定容器内项目是否可换行</h4><p>默认情况下，项目都排在主轴线上，使用 flex-wrap 可实现项目的换行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">    flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>nowrap （默认值）：不换行<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-3.png" alt="在这里插入图片描述"></p>
+</li>
+<li><p>wrap：换行，第一行在上方。<br>-<img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-4.jpg" alt="在这里插入图片描述"></p>
+</li>
+<li><p>wrap-reverse：换行，第一行在下方。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-4.png" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h4 id="1-3-flex-flow-flex-direction-和-flex-wrap-的简写形式"><a href="#1-3-flex-flow-flex-direction-和-flex-wrap-的简写形式" class="headerlink" title="1.3 flex-flow: flex-direction 和 flex-wrap 的简写形式"></a>1.3 flex-flow: flex-direction 和 flex-wrap 的简写形式</h4><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为 row || nowrap（“||”代表flex-direction和flex-wrap必须至少有一个，二者之间使用空格隔开，相应的属性请看上面）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>默认值为: row nowrap，感觉没什么卵用，老老实实分开写就好了。这样就不用记住这个属性了</p>
+<h4 id="1-4-justify-content：定义了项目在主轴的对齐方式"><a href="#1-4-justify-content：定义了项目在主轴的对齐方式" class="headerlink" title="1.4 justify-content：定义了项目在主轴的对齐方式"></a>1.4 justify-content：定义了项目在主轴的对齐方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
+<ul>
+<li>flex-start（默认值）：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center： 居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-5.jpg" alt="在这里插入图片描述"></p>
+<h4 id="1-5-align-content属性-定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用"><a href="#1-5-align-content属性-定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用" class="headerlink" title="1.5 align-content属性: 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用"></a>1.5 align-content属性: 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用</h4><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>该属性可能取6个值。</p>
+<ul>
+<li>flex-start：与交叉轴的起点对齐。</li>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-5.png" alt="在这里插入图片描述"></li>
+</ul>
+<h4 id="1-6-align-items属性-定义了项目在交叉轴上的对齐方式"><a href="#1-6-align-items属性-定义了项目在交叉轴上的对齐方式" class="headerlink" title="1.6 align-items属性: 定义了项目在交叉轴上的对齐方式"></a>1.6 align-items属性: 定义了项目在交叉轴上的对齐方式</h4><p>align-items属性定义项目在交叉轴上(副轴)如何对齐。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<ul>
+<li>flex-start：交叉轴的起点对齐。</li>
+<li>flex-end：交叉轴的终点对齐。</li>
+<li>center：交叉轴的中点对齐。</li>
+<li>baseline: 项目的第一行文字的基线对齐。</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-6.png" alt="在这里插入图片描述"></p>
+<h3 id="2-flex-item（子元素属性）"><a href="#2-flex-item（子元素属性）" class="headerlink" title="2. flex item（子元素属性）"></a>2. flex item（子元素属性）</h3><p>以下6个属性设置在项目上：</p>
+<ul>
+<li>order</li>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-basis</li>
+<li>flex</li>
+<li>align-self</li>
+</ul>
+<h4 id="2-1-order属性：定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为-0"><a href="#2-1-order属性：定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为-0" class="headerlink" title="2.1 order属性：定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0"></a>2.1 order属性：定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0</h4><p>默认情况下子元素的排列方式按照文档流的顺序依次排序，而 order 属性可以控制排列的顺序，负值在前，正值在后（和一维坐标系是相似的），按照从小到大的顺序依次排列。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">    order: &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-9.png" alt="在这里插入图片描述"></p>
+<h4 id="2-2-flex-grow属性"><a href="#2-2-flex-grow属性" class="headerlink" title="2.2 flex-grow属性"></a>2.2 flex-grow属性</h4><p>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-grow: &lt;number&gt;; /* default 0 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-10.png" alt="在这里插入图片描述"><br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<h4 id="2-3-flex-shrink属性"><a href="#2-3-flex-shrink属性" class="headerlink" title="2.3 flex-shrink属性"></a>2.3 flex-shrink属性</h4><p>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-shrink: &lt;number&gt;; /* default 1 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-11.jpg" alt="在这里插入图片描述"></p>
+<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+<p>负值对该属性无效。</p>
+<h4 id="2-4-flex-basis属性"><a href="#2-4-flex-basis属性" class="headerlink" title="2.4 flex-basis属性"></a>2.4 flex-basis属性</h4><p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-basis: &lt;length&gt; | auto; /* default auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h4 id="2-5-flex属性"><a href="#2-5-flex属性" class="headerlink" title="2.5 flex属性"></a>2.5 flex属性</h4><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</p>
+<p>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h4 id="2-6-align-self属性"><a href="#2-6-align-self属性" class="headerlink" title="2.6 align-self属性"></a>2.6 align-self属性</h4><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  align-self: auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-12.png" alt="在这里插入图片描述"></p>
+<p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><p>当屏幕宽度小于 640px 时，调整 Flexbox 的属性以实现第四个元素移动到最前面的效果，而不要改动第一个元素的边框颜色与高度实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;task10&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    .container &#123;</div><div class="line">      display: flex;</div><div class="line">      align-items: center;</div><div class="line">      justify-content: space-between;</div><div class="line">    &#125;</div><div class="line">    .item &#123;</div><div class="line">      flex: 0 0 auto;</div><div class="line">      width: 150px;</div><div class="line">      border: 1px solid #f00;</div><div class="line">    &#125;</div><div class="line">    .item1 &#123;</div><div class="line">      height: 120px;</div><div class="line">    &#125;</div><div class="line">    .item2 &#123;</div><div class="line">      height: 100px;</div><div class="line">    &#125;</div><div class="line">    .item3 &#123;</div><div class="line">      height: 40px;</div><div class="line">    &#125;</div><div class="line">    .item4 &#123;</div><div class="line">      height: 200px;</div><div class="line">      border-color: #0f0;</div><div class="line">    &#125;</div><div class="line">    @media screen and (max-width: 640px) &#123;</div><div class="line">      .container &#123;</div><div class="line">        display: flex;</div><div class="line">        align-items: flex-start;</div><div class="line">        flex-wrap: wrap;</div><div class="line">      &#125;</div><div class="line">      .item4 &#123;</div><div class="line">        order: -1;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;div class=&quot;item item1&quot;&gt;宽度 150px, 高度 120px, 边框颜色 #f00&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item item2&quot;&gt;宽度 150px, 高度 100px, 边框颜色 #f00&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item item3&quot;&gt;宽度 150px, 高度 40px, 边框颜色 #f00&lt;/div&gt;</div><div class="line">    &lt;div class=&quot;item item4&quot;&gt;宽度 150px, 高度 200px, 边框颜色 #0f0&lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-demo1.jpg" alt="在这里插入图片描述"></p>
+<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-demo2.jpg" alt="在这里插入图片描述"></p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">Flex 布局教程：语法篇</a><br><a href="https://zhuanlan.zhihu.com/p/25303493" target="_blank" rel="external">30 分钟学会 Flex 布局</a></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://dcpnonstop.github.io/blogimg/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,364 +351,116 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/10/04/flex布局学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/30/前端模拟排序动画/" class="archive-article-date">
-  	<time datetime="2018-09-30T05:24:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/30/前端模拟排序动画/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端模拟排序动画</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/30/前端模拟排序动画/">前端模拟排序动画</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/10/04/flex布局学习/", 
+    sourceId: "flex布局学习",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/29/JavaScript中this指向详解/" class="archive-article-date">
-  	<time datetime="2018-09-29T08:12:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/29/JavaScript中this指向详解/">JavaScript中this指向详解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/29/JavaScript闭包详解/" class="archive-article-date">
-  	<time datetime="2018-09-29T08:05:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/29/JavaScript闭包详解/">JavaScript闭包详解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/图解ES6中的React生命周期/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/图解ES6中的React生命周期/">图解ES6中的React生命周期</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/20/jsonp跨域获取数据实现百度搜索/" class="archive-article-date">
-  	<time datetime="2018-09-20T12:59:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/20/jsonp跨域获取数据实现百度搜索/">jsonp跨域获取数据实现百度搜索</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/Personal-resume/" class="archive-article-date">
-  	<time datetime="2018-09-19T04:44:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/Personal-resume/">Personal resume</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/" class="archive-article-date">
-  	<time datetime="2018-09-17T08:48:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/17/tcp长连接，短连接，http短轮询长轮询/">TCP长连接，短连接，HTTP短轮询、长轮询</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/06/react常见面试题总结/" class="archive-article-date">
-  	<time datetime="2018-09-06T14:39:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/06/react常见面试题总结/">react常见面试题总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/25/牛客网在线编程Javascript输入输出/" class="archive-article-date">
-  	<time datetime="2018-08-25T07:35:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/25/牛客网在线编程Javascript输入输出/">牛客网在线编程Javascript输入输出</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/技术积累/page/2/">2</a><a class="extend next" rel="next" href="/tags/技术积累/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -579,9 +484,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
