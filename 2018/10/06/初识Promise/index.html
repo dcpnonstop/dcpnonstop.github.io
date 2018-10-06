@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/promise.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/promises.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/promise-states.png">
-<meta property="og:updated_time" content="2018-10-06T08:15:00.075Z">
+<meta property="og:updated_time" content="2018-10-06T08:17:39.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Promise">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/promise.jpg">
@@ -189,10 +189,10 @@
 <p>Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。它由社区最早提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。<br>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。</p>
 </blockquote>
 <h3 id="Promise对象的两个特点："><a href="#Promise对象的两个特点：" class="headerlink" title="Promise对象的两个特点："></a>Promise对象的两个特点：</h3><ol>
-<li>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。</li>
-</ol>
-<ol>
-<li>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</li>
+<li><p>对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。</p>
+</li>
+<li><p>一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p>
+</li>
 </ol>
 <ul>
 <li><p>一个 Promise有以下几种状态:  </p>
@@ -218,23 +218,21 @@
 <h4 id="3-4-Promise-resolve-value"><a href="#3-4-Promise-resolve-value" class="headerlink" title="3.4 Promise.resolve(value)"></a>3.4 Promise.resolve(value)</h4><p>返回一个状态由给定value决定的Promise对象。如果该值是一个Promise对象，则直接返回该对象；如果该值是thenable(即，带有then方法的对象)，返回的Promise对象的最终状态由then方法执行决定；否则的话(该value为空，基本类型或者不带then方法的对象),返回的Promise对象状态为fulfilled，并且将该value传递给对应的then方法。通常而言，如果你不知道一个值是否是Promise对象，使用Promise.resolve(value) 来返回一个Promise对象,这样就能将该value以Promise对象形式使用。</p>
 <h1 id="3-Promise原型"><a href="#3-Promise原型" class="headerlink" title="3.Promise原型"></a>3.Promise原型</h1><blockquote>
 <p><strong>属性</strong><br>Promise.prototype.constructor</p>
-<h2 id="返回被创建的实例函数-默认为-Promise-函数"><a href="#返回被创建的实例函数-默认为-Promise-函数" class="headerlink" title="返回被创建的实例函数.  默认为 Promise 函数."></a>返回被创建的实例函数.  默认为 Promise 函数.</h2><h4 id="4-1-Promise-prototype-catch-onRejected"><a href="#4-1-Promise-prototype-catch-onRejected" class="headerlink" title="4.1 Promise.prototype.catch(onRejected)"></a>4.1 Promise.prototype.catch(onRejected)</h4><p>添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise。当这个回调函数被调用，新 promise 将以它的返回值来resolve，否则如果当前promise 进入fulfilled状态，则以当前promise的完成结果作为新promise的完成结果.</p>
+<h2 id="返回被创建的实例函数-默认为-Promise-函数"><a href="#返回被创建的实例函数-默认为-Promise-函数" class="headerlink" title="返回被创建的实例函数.  默认为 Promise 函数."></a>返回被创建的实例函数.  默认为 Promise 函数.</h2></blockquote>
+<h4 id="4-1-Promise-prototype-catch-onRejected"><a href="#4-1-Promise-prototype-catch-onRejected" class="headerlink" title="4.1 Promise.prototype.catch(onRejected)"></a>4.1 Promise.prototype.catch(onRejected)</h4><p>添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise。当这个回调函数被调用，新 promise 将以它的返回值来resolve，否则如果当前promise 进入fulfilled状态，则以当前promise的完成结果作为新promise的完成结果.</p>
 <h4 id="4-2-Promise-prototype-then-onFulfilled-onRejected"><a href="#4-2-Promise-prototype-then-onFulfilled-onRejected" class="headerlink" title="4.2 Promise.prototype.then(onFulfilled, onRejected)"></a>4.2 Promise.prototype.then(onFulfilled, onRejected)</h4><p>添加解决(fulfillment)和拒绝(rejection)回调到当前 promise, 返回一个新的 promise, 将以回调的返回值来resolve.</p>
 <h4 id="4-3-Promise-prototype-finally-onFinally"><a href="#4-3-Promise-prototype-finally-onFinally" class="headerlink" title="4.3 Promise.prototype.finally(onFinally)"></a>4.3 Promise.prototype.finally(onFinally)</h4><p>添加一个事件处理回调于当前promise对象，并且在原promise对象解析完毕后，返回一个新的promise对象。回调会在当前promise运行完毕后被调用，无论当前promise的状态是完成(fulfilled)还是失败(rejected)</p>
-</blockquote>
 <hr>
 <h1 id="一个通俗易懂的Promise实例"><a href="#一个通俗易懂的Promise实例" class="headerlink" title="一个通俗易懂的Promise实例"></a>一个通俗易懂的Promise实例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">// 定外卖就是一个Promise,Promist的意思就是承诺</div><div class="line">// 我们定完外卖，饭不会立即到我们手中</div><div class="line">// 这时候我们和商家就要达成一个承诺</div><div class="line">// 在未来，不管饭是做好了还是烧糊了，都会给我们一个答复</div><div class="line">function 定外卖()&#123;</div><div class="line">    // Promise 接受两个参数</div><div class="line">    // resolve: 异步事件成功时调用（菜烧好了）</div><div class="line">    // reject: 异步事件失败时调用（菜烧糊了）</div><div class="line">    return new Promise((resolve, reject) =&gt; &#123;</div><div class="line">        let result = 做饭()</div><div class="line">	// 下面商家给出承诺，不管烧没烧好，都会告诉你</div><div class="line">	if (result == &apos;菜烧好了&apos;) </div><div class="line">	    // 商家给出了反馈</div><div class="line">	    resolve(&apos;我们的外卖正在给您派送了&apos;)</div><div class="line">	else </div><div class="line">	    reject(&apos;不好意思，我们菜烧糊了，您再等一会&apos;)</div><div class="line">	&#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 商家厨房做饭，模拟概率事件</div><div class="line">function 做饭() &#123;</div><div class="line">    return Math.random() &gt; 0.5 ? &apos;菜烧好了&apos; : &apos;菜烧糊了&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 你在家上饿了么定外卖</div><div class="line">// 有一半的概率会把你的饭烧糊了</div><div class="line">// 好在有承诺，他还是会告诉你</div><div class="line">定外卖()</div><div class="line">    // 菜烧好执行，返回&apos;我们的外卖正在给您派送了&apos;</div><div class="line">    .then(res =&gt; console.log(res))</div><div class="line">    // 菜烧糊了执行，返回&apos;不好意思，我们菜烧糊了，您再等一会&apos;</div><div class="line">    .catch(res =&gt; console.log(res))</div></pre></td></tr></table></figure>
 <hr>
 <p><strong>参考：</strong></p>
 <ul>
-<li><a href="https://github.com/dcpnonstop/blogpic/blob/master/javascript-promise-book.pdf" target="_blank" rel="external">promise-book</a><ul>
+<li><a href="https://github.com/dcpnonstop/blogpic/blob/master/javascript-promise-book.pdf" target="_blank" rel="external">promise-book</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/29632791" target="_blank" rel="external">promise实例</a></li>
 <li><a href="https://github.com/xieranmaya/blog/issues/3" target="_blank" rel="external">一步一步实现promise</a></li>
 <li><a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="external">阮一峰Promise对象</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">MDN promise</a></li>
 <li><a href="https://github.com/dcpnonstop/promise/tree/master" target="_blank" rel="external">初识 promise</a></li>
-</ul>
-</li>
 </ul>
 
       
