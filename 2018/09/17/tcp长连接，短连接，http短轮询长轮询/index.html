@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>TCP长连接，短连接，HTTP短轮询、长轮询 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="短连接和长连接： 常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是">
+  <meta name="description" content="短连接和长连接： 1.常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协">
 <meta name="keywords" content="技术积累">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP长连接，短连接，HTTP短轮询、长轮询">
 <meta property="og:url" content="http://yoursite.com/2018/09/17/tcp长连接，短连接，http短轮询长轮询/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
-<meta property="og:description" content="短连接和长连接： 常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是">
+<meta property="og:description" content="短连接和长连接： 1.常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/keep.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/short.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/long.jpg">
-<meta property="og:updated_time" content="2018-09-20T02:48:55.176Z">
+<meta property="og:updated_time" content="2018-10-06T08:31:08.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP长连接，短连接，HTTP短轮询、长轮询">
-<meta name="twitter:description" content="短连接和长连接： 常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是">
+<meta name="twitter:description" content="短连接和长连接： 1.常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/keep.jpg">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
@@ -186,19 +186,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="短连接和长连接："><a href="#短连接和长连接：" class="headerlink" title="短连接和长连接："></a><strong>短连接和长连接：</strong></h2><ol>
-<li><p>常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是应用层协议，而TCP是传输<br>层协议，只有负责传输的这一层才需要建立连接。</p>
-</li>
-<li><p>所谓的HTTP支持长连接，其实是基于Keep-Alive请求头约定，从而向下进行长连接发起的一种机制，该连接依然是基于TCP的。</p>
-</li>
-<li><p>大多数人都知道HTTP1.0不支持长连接，知道HTTP1.1支持长连接。所谓HTTP1.1及以上支持长连接，并不是HTTP1.1可以建立长连接，而是它支持以请求头的方式进行长连接发起（并且要求客户端与服务端都要具备 ‘Keep-Alive: true’ ）。</p>
-<a id="more"></a>
-<h3 id="短连接"><a href="#短连接" class="headerlink" title="短连接"></a><strong>短连接</strong></h3><p>所谓短连接，及连接只保持在数据传输过程，请求发起，连接建立，数据返回，连接关闭。它适用于一些实时数据请求，配合轮询来进行新旧数据的更替。短连接的流程就是：<strong><em>建立连接-&gt;发送数据-&gt;断开连接</em></strong>。一次发送之后立即断开连接。</p>
-<h4 id="短连接的好处："><a href="#短连接的好处：" class="headerlink" title="短连接的好处："></a><strong>短连接的好处：</strong></h4><p>既然有长连接了，为什么还需要用短连接的，因为短连接虽然是之前一直使用的，但是长连接保持了连接不被断开，那么如果并发量很好的时候，就会出现问题，所以短连接不用一直占用服务器资源，可以让服务器空出资源来解决其他的连接。<br>银行一般使用短连接。好像是因为：管理起来比较简单，存在的连接就是有用的。</p>
-<h3 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a><strong>长连接</strong></h3><p>长连接便是在连接发起后，在请求关闭连接前客户端与服务端都保持连接，实质是保持这个通信管道，之后便可以对其进行复用。长连接需要注意的是长连接并不是永久连接的。如果一段时间内（具体的时间长短，是可以在header当中进行设置的，也就是所谓的超时时间），这个连接没有HTTP请求发出的话，那么这个长连接就会被断掉。</p>
-<p>它适用于涉及消息推送，请求频繁的场景（直播，流媒体）。连接建立后，在该连接下的所有请求都可以重用这个长连接管道，避免了频繁了连接请求，提升了效率。<br><img src="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/keep.jpg" alt="这里写图片描述"></p>
-</li>
-</ol>
+        <h2 id="短连接和长连接："><a href="#短连接和长连接：" class="headerlink" title="短连接和长连接："></a><strong>短连接和长连接：</strong></h2><p> 1.常见的网上说http分为长连接和短连接，其实本质上是说的TCP连接。TCP连接是一个双向的通道，它是可以保持一段时间不关闭的，因此TCP连接才有真正的长连接和短连接这一说法。需要强调的是HTTP协议是基于请求/响应模式的，因此只要服务端给了响应，本次HTTP连接就结束了，或者更准确的说，是本次HTTP请求就结束了，根本没有长连接这一说，那么自然也没用短连接这一说了。HTPP协议是应用层协议，而TCP是传输<br>层协议，只有负责传输的这一层才需要建立连接。</p>
+<p> 2.所谓的HTTP支持长连接，其实是基于Keep-Alive请求头约定，从而向下进行长连接发起的一种机制，该连接依然是基于TCP的。</p>
+<p> 3.大多数人都知道HTTP1.0不支持长连接，知道HTTP1.1支持长连接。所谓HTTP1.1及以上支持长连接，并不是HTTP1.1可以建立长连接，而是它支持以请求头的方式进行长连接发起（并且要求客户端与服务端都要具备 ‘Keep-Alive: true’ ）。</p>
+ <a id="more"></a>
+<h3 id="短连接"><a href="#短连接" class="headerlink" title="短连接"></a><strong>短连接</strong></h3><p> 所谓短连接，及连接只保持在数据传输过程，请求发起，连接建立，数据返回，连接关闭。它适用于一些实时数据请求，配合轮询来进行新旧数据的更替。短连接的流程就是：<strong><em>建立连接-&gt;发送数据-&gt;断开连接</em></strong>。一次发送之后立即断开连接。</p>
+<h4 id="短连接的好处："><a href="#短连接的好处：" class="headerlink" title="短连接的好处："></a><strong>短连接的好处：</strong></h4><p> 既然有长连接了，为什么还需要用短连接的，因为短连接虽然是之前一直使用的，但是长连接保持了连接不被断开，那么如果并发量很好的时候，就会出现问题，所以短连接不用一直占用服务器资源，可以让服务器空出资源来解决其他的连接。<br>银行一般使用短连接。好像是因为：管理起来比较简单，存在的连接就是有用的。</p>
+<h3 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a><strong>长连接</strong></h3><p> 长连接便是在连接发起后，在请求关闭连接前客户端与服务端都保持连接，实质是保持这个通信管道，之后便可以对其进行复用。长连接需要注意的是长连接并不是永久连接的。如果一段时间内（具体的时间长短，是可以在header当中进行设置的，也就是所谓的超时时间），这个连接没有HTTP请求发出的话，那么这个长连接就会被断掉。</p>
+<p> 它适用于涉及消息推送，请求频繁的场景（直播，流媒体）。连接建立后，在该连接下的所有请求都可以重用这个长连接管道，避免了频繁了连接请求，提升了效率。<br><img src="https://raw.githubusercontent.com/dcpnonstop/dcpnonstop.github.io/master/blogimg/keep.jpg" alt="这里写图片描述"></p>
 <h4 id="长连接的好处："><a href="#长连接的好处：" class="headerlink" title="长连接的好处："></a><strong>长连接的好处：</strong></h4><p>   为什么要用长连接呢？长连接最重要的是可以服用TCP连接，这样减少了每次建立连接和断开连接的开销。所以现在大部分都是长连接，例如一个页面有很多文件，JS文件，CSS文件等等，不能每次都要建立一次连接，所以长连接是比较好的解决办法。</p>
 <p>   长连接不会长时间保持的，如果长时间没有响应，超时会自动断开的。</p>
 <p>  但是如果都保持连接，那么服务器会爆掉，所以TCP连接数量是有限制的。</p>
