@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/09/06/react常见面试题总结/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
 <meta property="og:description" content="一些常见的react面试总结，仅供参考">
-<meta property="og:updated_time" content="2018-09-29T07:53:21.638Z">
+<meta property="og:updated_time" content="2018-10-06T08:33:11.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react常见面试题总结">
 <meta name="twitter:description" content="一些常见的react面试总结，仅供参考">
@@ -197,9 +197,7 @@
 <li>props放初始化数据，一直不变的，state就是放要变的。</li>
 <li>需要理解的是，props是一个父组件传递给子组件的数据流，这个数据流可以一直传递到子孙组件。而 state代表的是一个组件内部自身的状态（可以是父组件、子孙组件）</li>
 <li>改变一个组件自身状态，从语义上来说，就是这个组件内部已经发生变化，有可能需要对此组件以及组件所包含的子孙组件进行重渲染。</li>
-<li>两者的变化都有可能导致组件重渲染</li>
-<li>state：如果component的某些状态需要被改变，并且会影响到component的render，那么这些状态就应该用state表示。例如：一个购物车的component，会根据用户在购物车中添加的产品和产品数量，显示不同的价格，那么“总价”这个状态，就应该用state表示。</li>
-<li>props:如果component的某些状态由外部所决定，并且会影响到component的render，那么这些状态就应该用props表示。例如：一个下拉菜单的component，有哪些菜单项，是由这个component的使用者和使用场景决定的，那么“菜单项”这个状态，就应该用props表示，并且由外部传入。</li>
+<li>两者的变化都有可能导致组件重渲染<br>5.state：如果component的某些状态需要被改变，并且会影响到component的render，那么这些状态就应该用state表示。例如：一个购物车的component，会根据用户在购物车中添加的产品和产品数量，显示不同的价格，那么“总价”这个状态，就应该用state表示。<br>6.props:如果component的某些状态由外部所决定，并且会影响到component的render，那么这些状态就应该用props表示。例如：一个下拉菜单的component，有哪些菜单项，是由这个component的使用者和使用场景决定的，那么“菜单项”这个状态，就应该用props表示，并且由外部传入。</li>
 </ol>
 <h3 id="11、调用-setState-之后发生了什么？"><a href="#11、调用-setState-之后发生了什么？" class="headerlink" title="11、调用 setState 之后发生了什么？"></a><strong>11、调用 setState 之后发生了什么？</strong></h3><p>在代码中调用setState函数之后，React 会将传入的参数对象与组件当前的状态合并，然后触发所谓的调和过程（Reconciliation）。经过调和过程，React 会以相对高效的方式根据新的状态构建 React 元素树并且着手重新渲染整个UI界面。在 React 得到元素树之后，React 会自动计算出新的树与老树的节点差异，然后根据差异对界面进行最小化重渲染。在差异计算算法中，React 能够相对精确地知道哪些位置发生了改变以及应该如何改变，这就保证了按需更新，而不是全部重新渲染。</p>
 <h3 id="12、React-中-refs-的作用是什么？"><a href="#12、React-中-refs-的作用是什么？" class="headerlink" title="12、React 中 refs 的作用是什么？"></a><strong>12、React 中 refs 的作用是什么？</strong></h3><p>Refs 是 React 提供给我们的安全访问 DOM 元素或者某个组件实例的句柄。我们可以为元素添加ref属性然后在回调函数中接受该元素在 DOM 树中的句柄，该值会作为回调函数的第一个参数返回</p>
