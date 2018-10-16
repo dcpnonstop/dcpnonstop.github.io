@@ -6,31 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>雨天杂记 | 叮当了个和谐</title>
+  <title>一篇文章读懂MVC，MVP 和 MVVM | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="心情记录">
+  <meta name="description" content="一、MVC 如何设计一个程序的结构，这是一门专门的学问，叫做”架构模式”（architectural pattern），属于编程的方法论。MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。 这个模式认为，程序(软件)不论简单或复杂，从结构上看，都可以分成三层。">
+<meta name="keywords" content="技术积累">
 <meta property="og:type" content="article">
-<meta property="og:title" content="雨天杂记">
-<meta property="og:url" content="http://yoursite.com/2017/10/15/雨天的周末/index.html">
+<meta property="og:title" content="一篇文章读懂MVC，MVP 和 MVVM">
+<meta property="og:url" content="http://yoursite.com/2018/10/16/一篇文章读懂MVC，MVP-和-MVVM/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/autum2.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/bamboo.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/autumn1.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/osmanthus1.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/osmanthus2.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/osmanthus3.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/osmanthus4.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/mood.gif">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/IMG_0911.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/IMG_0910.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/IMG_0891.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/20171015150749796.gif">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/dessert1.JPG">
-<meta property="og:image" content="https://dcpnonstop.github.io/blogimg/dessert2.JPG">
-<meta property="og:updated_time" content="2017-10-16T06:05:50.757Z">
+<meta property="og:description" content="一、MVC 如何设计一个程序的结构，这是一门专门的学问，叫做”架构模式”（architectural pattern），属于编程的方法论。MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。 这个模式认为，程序(软件)不论简单或复杂，从结构上看，都可以分成三层。">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc7.png">
+<meta property="og:updated_time" content="2018-10-16T12:33:49.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雨天杂记">
-<meta name="twitter:image" content="https://dcpnonstop.github.io/blogimg/autum2.JPG">
+<meta name="twitter:title" content="一篇文章读懂MVC，MVP 和 MVVM">
+<meta name="twitter:description" content="一、MVC 如何设计一个程序的结构，这是一门专门的学问，叫做”架构模式”（architectural pattern），属于编程的方法论。MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。 这个模式认为，程序(软件)不论简单或复杂，从结构上看，都可以分成三层。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc1.png">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -174,46 +170,113 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-雨天的周末" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-一篇文章读懂MVC，MVP-和-MVVM" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      雨天杂记
+      一篇文章读懂MVC，MVP 和 MVVM
     </h1>
   
 
         
-        <a href="/2017/10/15/雨天的周末/" class="archive-article-date">
-  	<time datetime="2017-10-15T14:04:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-15</time>
+        <a href="/2018/10/16/一篇文章读懂MVC，MVP-和-MVVM/" class="archive-article-date">
+  	<time datetime="2018-10-16T12:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://dcpnonstop.github.io/blogimg/autum2.JPG" alt="image"></p>
-<a id="more"></a>
-<p>&emsp;&emsp;不知道是谁告诉导师我会拍照，然后实验室每次承办的活动都是由我来摄影的，其实我只是会用手机拍照，太穷的人买不起单反，所以连怎么用都不会，第一次连个傻瓜式拍摄都不会，既然导师说你负责拍照吧，那么也只能硬着头皮上了。</p>
-<p>&emsp;&emsp;第一次拍摄会议现场，给导师的特写把导师给拍糊了，没敢交差，幸好旁边有专业摄影的，厚着脸皮把别人拍的照片要了过来，马马虎虎的交了差，导师夸我拍的还不错，我不好意思的笑了笑。</p>
-<p>&emsp;&emsp;迈出了第一步，总不能以后的摄影都指望别人的照片吧，于是呀每次趁需要拍照的时候，都会拿导师的单反练手，幸好有前几次的经验，这次导师找我负责拍照，然来是学院承办的一个会议，顺便听听报告，顺便练练拍照，何乐而不为呢？</p>
-<p>&emsp;&emsp;于是雨天的周末在拍照中度过了，还好单反会用一点，至少可以把人拍清楚了，放图了~</p>
+        <h1 id="一、MVC"><a href="#一、MVC" class="headerlink" title="一、MVC"></a>一、MVC</h1><hr>
+<p>如何设计一个程序的结构，这是一门专门的学问，叫做”架构模式”（architectural pattern），属于编程的方法论。<br><strong>MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）。</strong></p>
+<p>这个模式认为，程序(软件)不论简单或复杂，从结构上看，都可以分成三层。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc1.png" alt="11"><br><a id="more"></a></p>
+<ul>
+<li>视图（View）：用户界面。</li>
+<li>控制器（Controller）：业务逻辑</li>
+<li>模型（Model）：数据保存</li>
+</ul>
+<blockquote>
+<p>1）最上面的一层，是直接面向最终用户的”视图层”（View）。它是提供给用户的操作界面，是程序的外壳。<br>2）最底下的一层，是核心的”数据层”（Model），也就是程序需要操作的数据或信息。<br>3）中间的一层，就是”控制层”（Controller），它负责根据用户从”视图层”输入的指令，选取”数据层”中的数据，然后对其进行相应的操作，产生最终结果。</p>
+</blockquote>
+<p>这三层是紧密联系在一起的，但又是互相独立的，每一层内部的变化不影响其他层。每一层都对外提供接口（Interface），供上面一层调用。这样一来，软件就可以实现模块化，修改外观或者变更数据都不用修改其他层，大大方便了维护和升级。</p>
+<h5 id="各部分之间的通信方式如下："><a href="#各部分之间的通信方式如下：" class="headerlink" title="各部分之间的通信方式如下："></a>各部分之间的通信方式如下：</h5><p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc2.png" alt="22"></p>
+<blockquote>
+<ol>
+<li>View 传送指令到 Controller</li>
+<li>Controller 完成业务逻辑后，要求 Model 改变状态</li>
+<li>Model 将新的数据发送到 View，用户得到反馈</li>
+</ol>
+</blockquote>
+<p><strong>所有通信都是单向的。</strong></p>
+<h4 id="MVC优点："><a href="#MVC优点：" class="headerlink" title="MVC优点："></a>MVC优点：</h4><ul>
+<li>耦合性低，视图层和业务层分离，这样就允许更改视图层代码而不用重新编译模型和控制器代码。</li>
+<li>重用性高</li>
+<li>生命周期成本低</li>
+<li>MVC使开发和维护用户接口的技术含量降低</li>
+<li><p>可维护性高，分离视图层和业务逻辑层也使得WEB应用更易于维护和修改<br>部署快</p>
+<h4 id="MVC缺点："><a href="#MVC缺点：" class="headerlink" title="MVC缺点："></a>MVC缺点：</h4></li>
+<li><p>不适合小型，中等规模的应用程序，花费大量时间将MVC应用到规模并不是很大的应用程序通常会得不偿失。</p>
+</li>
+<li><p>视图与控制器间过于紧密连接，视图与控制器是相互分离，但却是联系紧密的部件，视图没有控制器的存在，其应用是很有限的，反之亦然，这样就妨碍了他们的独立重用。</p>
+</li>
+<li><p>视图对模型数据的低效率访问，依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</p>
+</li>
+</ul>
+<h4 id="MVC应用："><a href="#MVC应用：" class="headerlink" title="MVC应用："></a>MVC应用：</h4><ul>
+<li>在web app 流行之初， MVC 就应用在了java（struts2）和C#（ASP.NET）服务端应用中，后来在客户端应用程序中，基于MVC模式，AngularJS应运而生。</li>
+</ul>
 <hr>
-<h3 id="与会场无关的"><a href="#与会场无关的" class="headerlink" title="与会场无关的"></a><strong>与会场无关的</strong></h3><p>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>初秋的竹林小道还茂密</strong><br><img src="https://dcpnonstop.github.io/blogimg/bamboo.JPG" alt="image"></p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>树叶开始泛黄掉落了</strong><br><img src="https://dcpnonstop.github.io/blogimg/autumn1.JPG" alt="image"></p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>夹杂着雨水的丹桂香让我想起了妈妈炖板栗的味道</strong><br><img src="https://dcpnonstop.github.io/blogimg/osmanthus1.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/osmanthus2.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/osmanthus3.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/osmanthus4.JPG" alt="image"></p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>站在湖边忍不住惆怅了一下，论文，一愁，头发掉得更厉害了</strong><br><img src="https://dcpnonstop.github.io/blogimg/mood.gif" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/IMG_0911.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/IMG_0910.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/IMG_0891.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/20171015150749796.gif" alt="image"></p>
-<p>&emsp;&emsp;&emsp;&emsp;&emsp;<strong>以为只是帮忙拍拍照，没想到还有好吃的甜点</strong><br><img src="https://dcpnonstop.github.io/blogimg/dessert1.JPG" alt="image"></p>
-<p><img src="https://dcpnonstop.github.io/blogimg/dessert2.JPG" alt="image"></p>
+<h1 id="二、互动模式"><a href="#二、互动模式" class="headerlink" title="二、互动模式"></a>二、互动模式</h1><hr>
+<p>接受用户指令时，MVC 可以分成两种方式。一种是通过 View 接受指令，传递给 Controller。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc3.png" alt="32"></p>
+<p>另一种是直接通过controller接受指令。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc4.png" alt="32"></p>
+<hr>
+<h1 id="三、实例：Backbone"><a href="#三、实例：Backbone" class="headerlink" title="三、实例：Backbone"></a>三、实例：Backbone</h1><p>实际项目往往采用更灵活的方式，以 Backbone.js 为例<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc5.png" alt="32"></p>
+<blockquote>
+<ol>
+<li>用户可以向 View 发送指令（DOM 事件），再由 View 直接要求 Model 改变状态。</li>
+<li>用户也可以直接向 Controller 发送指令（改变 URL 触发 hashChange 事件），再由 Controller 发送给 View。</li>
+<li>Controller 非常薄，只起到路由的作用，而 View 非常厚，业务逻辑都部署在 View。所以，Backbone 索性取消了 Controller，只保留一个 Router（路由器） 。</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="四、MVP"><a href="#四、MVP" class="headerlink" title="四、MVP"></a>四、MVP</h1><p>MVP 模式将 Controller 改名为 Presenter，同时改变了通信方向。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc6.png" alt="32"></p>
+<blockquote>
+<ol>
+<li>各部分之间的通信，都是双向的。</li>
+<li>View 与 Model 不发生联系，都通过 Presenter 传递。</li>
+<li>View 非常薄，不部署任何业务逻辑，称为”被动视图”（Passive View），即没有任何主动性，而 Presenter非常厚，所有逻辑都部署在那里。</li>
+</ol>
+<h4 id="MVP优点："><a href="#MVP优点：" class="headerlink" title="MVP优点："></a>MVP优点：</h4></blockquote>
+<ul>
+<li>模型与视图完全分离，我们可以修改视图而不影响模型；</li>
+<li>可以更高效地使用模型，因为所有的交互都发生在一个地方——Presenter内部；</li>
+<li>我们可以将一个Presenter用于多个视图，而不需要改变Presenter的逻辑。这个特性非常的有用，因为视图的变化总是比模型的变化频繁；</li>
+<li><p>如果我们把逻辑放在Presenter中，那么我们就可以脱离用户接口来测试这些逻辑（单元测试）。</p>
+<h4 id="MVP缺点："><a href="#MVP缺点：" class="headerlink" title="MVP缺点："></a>MVP缺点：</h4></li>
+<li><p>视图和Presenter的交互会过于频繁，使得他们的联系过于紧密。也就是说，一旦视图变更了，presenter也要变更。</p>
+</li>
+</ul>
+<h4 id="MVP应用："><a href="#MVP应用：" class="headerlink" title="MVP应用："></a>MVP应用：</h4><ul>
+<li>可应用与Android开发。</li>
+</ul>
+<h1 id="五、MVVM"><a href="#五、MVVM" class="headerlink" title="五、MVVM"></a>五、MVVM</h1><p>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/mvc7.png" alt="32"><br>唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Angular 和 Ember 都采用这种模式。</p>
+<h4 id="MVVM优点："><a href="#MVVM优点：" class="headerlink" title="MVVM优点："></a>MVVM优点：</h4><ul>
+<li><p>MVVM模式和MVC模式类似，主要目的是分离视图（View）和模型（Model），有几大优点：</p>
+</li>
+<li><p>低耦合，视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</p>
+</li>
+<li><p>可重用性，可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</p>
+</li>
+<li><p>独立开发，开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计，使用Expression Blend可以很容易设计界面并生成xml代码。</p>
+</li>
+<li><p>可测试，界面向来是比较难于测试的，而现在测试可以针对ViewModel来写。</p>
+</li>
+</ul>
+<hr>
+<p>参考<br><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="external">MVC，MVP 和 MVVM图示</a><br><a href="http://www.ruanyifeng.com/blog/2007/11/mvc.html" target="_blank" rel="external">谈谈MVC模式</a></p>
 
       
 
@@ -253,7 +316,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
         		</li>
       		
 		</ul>
@@ -309,7 +372,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/15/雨天的周末/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/10/16/一篇文章读懂MVC，MVP-和-MVVM/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +386,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/21/文件数据和文件元数据详解/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          文件数据和文件元数据详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/15/如何把本地项目上传到Github/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何把本地项目上传到Github</div>
+    <a href="/2018/10/12/css选择器及其优先级排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css选择器及其优先级排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -365,8 +419,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2017/10/15/雨天的周末/", 
-    sourceId: "雨天的周末",
+    url: "http://yoursite.com/2018/10/16/一篇文章读懂MVC，MVP-和-MVVM/", 
+    sourceId: "一篇文章读懂MVC，MVP-和-MVVM",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
