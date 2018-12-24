@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>叮当了个和谐</title>
+  <title>git上传文件常见命令 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叮当了个和谐">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="12345678新建文件夹git init将上传的文件复制过来git add .git statusgit commit -m &amp;apos;注释&amp;apos;$ git remote add origin https://github.com/dcpnonstop/HDUthesis.git$ git push -u origin master">
+<meta name="keywords" content="技术积累">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git上传文件常见命令">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/git上传文件常见命令/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
+<meta property="og:description" content="12345678新建文件夹git init将上传的文件复制过来git add .git statusgit commit -m &amp;apos;注释&amp;apos;$ git remote add origin https://github.com/dcpnonstop/HDUthesis.git$ git push -u origin master">
+<meta property="og:updated_time" content="2018-12-24T07:49:01.527Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:title" content="git上传文件常见命令">
+<meta name="twitter:description" content="12345678新建文件夹git init将上传的文件复制过来git add .git statusgit commit -m &amp;apos;注释&amp;apos;$ git remote add origin https://github.com/dcpnonstop/HDUthesis.git$ git push -u origin master">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -157,34 +162,88 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-初识Promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-git上传文件常见命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/06/初识Promise/">初识Promise</a>
+    <h1 class="article-title" itemprop="name">
+      git上传文件常见命令
     </h1>
   
 
         
-        <a href="/2018/10/06/初识Promise/" class="archive-article-date">
-  	<time datetime="2018-10-06T08:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-06</time>
+        <a href="/2018/12/24/git上传文件常见命令/" class="archive-article-date">
+  	<time datetime="2018-12-24T07:44:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/promise.jpg" alt="promise"><br>
-        
-          <a class="article-more-a" href="/2018/10/06/初识Promise/#more">more >></a>
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">新建文件夹</div><div class="line">git init</div><div class="line">将上传的文件复制过来</div><div class="line">git add .</div><div class="line">git status</div><div class="line">git commit -m &apos;注释&apos;</div><div class="line">$ git remote add origin https://github.com/dcpnonstop/HDUthesis.git</div><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>使用github不是很久，把一些遇到的问题记录下来。<br>关于git安装以及远程连接仓库相信网上有很多资料<br>那些资料都很详细，所以我就不多说了。<br>接下来就说说已经连接了远程仓库的情况下，如何将文件夹上传到github。<br>很简单的几个命令；<br>1：找到你要上传的文件夹，右键点击-&gt;选择git-bash-here;<br>2：在弹出的命令窗口输入以下命令<br>git add .<br>我们知道git add命令是用来添加文件到缓存区的，这里使用 . 表示所有。所有这样就把所有的内容添加进去了<br>git commit -m “注释”<br>这表示提交到分支<br>git push origin master<br>把当前分支推送到远程仓库<br>这样就可以了。<br>下面再附上git的相关命令：<br>Git基本常用命令如下：</p>
+<p>mkdir： XX (创建一个空目录 XX指目录名)</p>
+<p>pwd： 显示当前目录的路径。</p>
+<p>git init 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</p>
+<p>git add XX 把xx文件添加到暂存区去。</p>
+<p>git commit –m “XX” 提交文件 –m 后面的是注释。</p>
+<p>git status 查看仓库状态</p>
+<p>git diff XX 查看XX文件修改了那些内容</p>
+<p>git log 查看历史记录</p>
+<p>git reset –hard HEAD^ 或者 git reset –hard HEAD~ 回退到上一个版本     </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(如果想回退到100个版本，使用git reset –hard HEAD~100 )</div></pre></td></tr></table></figure>
+<p>cat XX 查看XX文件内容</p>
+<p>git reflog 查看历史记录的版本号id</p>
+<p>git checkout — XX 把XX文件在工作区的修改全部撤销。</p>
+<p>git rm XX 删除XX文件</p>
+<p>git remote add origin <a href="https://github.com/zongyunqingfeng/testgit" target="_blank" rel="external">https://github.com/zongyunqingfeng/testgit</a> 关联一个远程库</p>
+<p>git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库</p>
+<p>git clone <a href="https://github.com/zongyunqingfeng/testgit" target="_blank" rel="external">https://github.com/zongyunqingfeng/testgit</a> 从远程库中克隆</p>
+<p>git checkout –b dev 创建dev分支 并切换到dev分支上</p>
+<p>git branch 查看当前所有的分支</p>
+<p>git checkout master 切换回master分支</p>
+<p>git merge dev 在当前的分支上合并dev分支</p>
+<p>git branch –d dev 删除dev分支</p>
+<p>git branch name 创建分支</p>
+<p>git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作</p>
+<p>git stash list 查看所有被隐藏的文件列表</p>
+<p>git stash apply 恢复被隐藏的文件，但是内容不删除</p>
+<p>git stash drop 删除文件</p>
+<p>git stash pop 恢复文件的同时 也删除文件</p>
+<p>git remote 查看远程库的信息</p>
+<p>git remote –v 查看远程库的详细信息</p>
+<p>git push origin master Git会把master分支推送到远程库对应的远程分支上</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://dcpnonstop.github.io/blogimg/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -204,16 +263,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/06/初识Promise/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/12/24/git上传文件常见命令/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/24/2018年终总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2018年终总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -233,710 +351,25 @@
 
 
 
-
-  
-    <article id="post-flex布局学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/04/flex布局学习/">flex布局学习</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/04/flex布局学习/" class="archive-article-date">
-  	<time datetime="2018-10-04T12:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关于flex布局"><a href="#关于flex布局" class="headerlink" title="关于flex布局"></a>关于flex布局</h2><blockquote>
-<p>学习 Flex 布局，你只要学习几个 CSS 属性，就可以写出简洁优雅复杂的页面布局。</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/flex-1.jpg" alt="fle"></p>
-        
-          <a class="article-more-a" href="/2018/10/04/flex布局学习/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/04/flex布局学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-前端模拟排序动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/前端模拟排序动画/">前端模拟排序动画</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/30/前端模拟排序动画/" class="archive-article-date">
-  	<time datetime="2018-09-30T05:24:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Sort-the-animation"><a href="#Sort-the-animation" class="headerlink" title="Sort-the-animation"></a>Sort-the-animation</h1><h1 id="携程前端模拟排序动画-效果如下"><a href="#携程前端模拟排序动画-效果如下" class="headerlink" title="携程前端模拟排序动画,效果如下"></a>携程前端模拟排序动画,效果如下</h1><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://user-gold-cdn.xitu.io/2018/9/5/165a9b666b23e820?w=750&amp;h=120&amp;f=gif&amp;s=1675334" alt="图"></h2>
-        
-          <a class="article-more-a" href="/2018/09/30/前端模拟排序动画/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/30/前端模拟排序动画/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript中this指向详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/JavaScript中this指向详解/">JavaScript中this指向详解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/29/JavaScript中this指向详解/" class="archive-article-date">
-  	<time datetime="2018-09-29T08:12:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="this到底是什么？"><a href="#this到底是什么？" class="headerlink" title="this到底是什么？"></a>this到底是什么？</h4><blockquote>
-<ol>
-<li>this实际上是在函数调用时发生的绑定，它指向什么完全取决于函数在哪里被调用（起决于函数的调用位置）</li>
-<li>当一个函数被调用时，会创建一个活动记录（有时候也称为执行上下文）。这个记录会包含函数在哪里被调用（调用栈）、函数的调用方式、传入的参数等信息。this就是这个记录的一个属性，会在函数执行的过程中用到。</li>
-</ol>
-<hr>
-        
-          <a class="article-more-a" href="/2018/09/29/JavaScript中this指向详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/29/JavaScript中this指向详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript闭包详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/JavaScript闭包详解/">JavaScript闭包详解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/29/JavaScript闭包详解/" class="archive-article-date">
-  	<time datetime="2018-09-29T08:05:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="关于闭包："><a href="#关于闭包：" class="headerlink" title="关于闭包："></a>关于闭包：</h2><p>ECMAScript中给闭包的定义： 闭包，指的是词法表示包括不被计算的变量的函数，也就是说函数可以使用函数之外定义的变量。<br>
-        
-          <a class="article-more-a" href="/2018/09/29/JavaScript闭包详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/29/JavaScript闭包详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cvte视频二面-招银网络电话一面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/29/cvte视频二面-招银网络电话一面/">cvte视频二面+招银网络电话一面</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/29/cvte视频二面-招银网络电话一面/" class="archive-article-date">
-  	<time datetime="2018-09-29T07:50:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="cvte视频二面"><a href="#cvte视频二面" class="headerlink" title="cvte视频二面"></a><strong>cvte视频二面</strong></h2><p>面试问的问题依然比较基础，面试官依然和nice ：</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-        
-          <a class="article-more-a" href="/2018/09/29/cvte视频二面-招银网络电话一面/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/29/cvte视频二面-招银网络电话一面/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-网易-cvte面试记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/27/网易-cvte面试记录/">网易+cvte面试记录</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/27/网易-cvte面试记录/" class="archive-article-date">
-  	<time datetime="2018-09-27T14:29:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/wy.jpg" alt="1"><br>
-        
-          <a class="article-more-a" href="/2018/09/27/网易-cvte面试记录/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/27/网易-cvte面试记录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-写在奶奶去世一周年" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/26/写在奶奶去世一周年/">写在奶奶去世一周年</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/26/写在奶奶去世一周年/" class="archive-article-date">
-  	<time datetime="2018-09-26T04:47:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/ccc.jpg" alt="1"></p>
-<p><strong>死亡不是真的逝去，遗忘才是永恒的消亡</strong></p>
-<hr>
-        
-          <a class="article-more-a" href="/2018/09/26/写在奶奶去世一周年/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/26/写在奶奶去世一周年/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-“账号已注销”，再见网易云" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/23/“账号已注销”，再见网易云/">“账号已注销”，再见网易云</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/23/“账号已注销”，再见网易云/" class="archive-article-date">
-  	<time datetime="2018-09-23T13:16:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>和一个人最深的交流，用心看他画的画听他作的音乐读他写的诗，非要吃一顿饭不可，是为什么呢。他又不擅长吃饭。                                                                                                            </p><p align="right"> 一贾行家</p><p></p>
-<hr>
-        
-          <a class="article-more-a" href="/2018/09/23/“账号已注销”，再见网易云/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/23/“账号已注销”，再见网易云/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-图解ES6中的React生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/23/图解ES6中的React生命周期/">图解ES6中的React生命周期</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/23/图解ES6中的React生命周期/" class="archive-article-date">
-  	<time datetime="2018-09-23T12:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/gouzi.jpg" alt="狗子"></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>如果将React的生命周期比喻成一只蚂蚁爬过一根吊绳，那么这只蚂蚁从绳头爬到绳尾，就会依次触动不同的卡片挂钩。在React每一个生命周期中，也有类似卡片挂钩的存在，我们把它称之为‘钩子函数’。那么在React的生命周期中，到底有哪些钩子函数？React的生命周期又是怎样的流程？今天我给大家来总结总结<br>
-        
-          <a class="article-more-a" href="/2018/09/23/图解ES6中的React生命周期/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/23/图解ES6中的React生命周期/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/12/24/git上传文件常见命令/", 
+    sourceId: "git上传文件常见命令",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
   
 
 
@@ -959,8 +392,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
