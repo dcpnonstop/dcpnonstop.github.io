@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 叮当了个和谐</title>
+  <title>学习 Node.js 的 6 个步骤 | 叮当了个和谐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="叮当了个和谐">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="从刚接触Node.js到现在，自己也是一路摸滚打爬过来的，虽不说是什么高手，但对于如何学习Node.js，还是有一些个人见解，拿出来与大家共勉~">
+<meta name="keywords" content="技术积累">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习 Node.js 的 6 个步骤">
+<meta property="og:url" content="http://yoursite.com/2018/12/27/学习-Node-js-的-6-个步骤/index.html">
 <meta property="og:site_name" content="叮当了个和谐">
+<meta property="og:description" content="从刚接触Node.js到现在，自己也是一路摸滚打爬过来的，虽不说是什么高手，但对于如何学习Node.js，还是有一些个人见解，拿出来与大家共勉~">
+<meta property="og:updated_time" content="2018-12-27T07:29:16.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="叮当了个和谐">
+<meta name="twitter:title" content="学习 Node.js 的 6 个步骤">
+<meta name="twitter:description" content="从刚接触Node.js到现在，自己也是一路摸滚打爬过来的，虽不说是什么高手，但对于如何学习Node.js，还是有一些个人见解，拿出来与大家共勉~">
   
     <link rel="alternative" href="/atom.xml" title="叮当了个和谐" type="application/atom+xml">
   
@@ -157,36 +162,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-学习-Node-js-的-6-个步骤" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习 Node.js 的 6 个步骤
+    </h1>
+  
+
+        
+        <a href="/2018/12/27/学习-Node-js-的-6-个步骤/" class="archive-article-date">
+  	<time datetime="2018-12-27T07:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从刚接触Node.js到现在，自己也是一路摸滚打爬过来的，虽不说是什么高手，但对于如何学习Node.js，还是有一些个人见解，拿出来与大家共勉~</p>
+<a id="more"></a>
+<hr>
+<p>学习Node.js大致有 6 个步骤或者说 6 个层次：</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>对于刚接触Node.js的新手来说，第一步无非是打好基础，你需要弄明白以下事情：</p>
+<p>JavaScript 的特性和语法。假如你对 JavaScript 还不熟悉的话，推荐书籍及链接：<br><a href="https://github.com/JacksonTian/fks#javascript" target="_blank" rel="external">JavaScript 推荐书籍列表</a><br><a href="http://www.cnblogs.com/TomXu/archive/2011/12/28/2286877.html" target="_blank" rel="external">深入理解JavaScript系列</a><br>Node.js 是什么？Node.js与JavaScript的区别是什么？<br>Node.js的优点？Node.js的缺点？<br>Node.js适用场景？Node.js不适用的场景？<br>Node.js的基本语法。Node.js的特性：<br>单线程<br>异步 IO<br>事件驱动<br>npm 是什么？npm的基本使用<br>REPL<br>等等<br>其实上面的内容，大部分Node.js的书籍都有介绍。基本了解了Node.js后，我们可以写一些 hello world 的程序：</p>
+<p>搭建一个 HTTP 服务器，返回 hello, world 。(使用 HTTP 模块)<br>读取一个 txt 文件，将内容显示到命令行中。（使用 fs 模块）<br>等等</p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>你也许想，Node.js 只有那些少得可怜的核心模块能做什么呢？别担心，npm 上目前有近 7W 的第三方模块，月下载量高达 2.1亿 （2014—4—20 数据）… 这才是 Node.js 的活力所在。当你对Node.js已经了解的差不多了，并且按耐不住跃跃欲试了。这个时候，我们不妨用 Node.js 的第三方模块做些好玩的事情：</p>
+<p>搭建一个微博网站<br>搭建一个博客网站<br>搭建一个在线聊天室<br>写一个简单的爬虫<br>调用一些网站的API做一些好玩的东西<br>等等<br>但是，并不是说 Node.js 只能做以上事情，几乎其他语言能做的事情 Node.js 都能做，而且有些情况下能做的更好。</p>
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>当然，就像学 js 也不能只会用框架一样，学习 Node.js 也不能只会用外部模块。这个时候，我们需要回头深入了解下 Node.js 核心模块的用法。说白了，就是好好看 Node.js 官方 <a href="https://nodejs.org/api/" target="_blank" rel="external">API 文档</a>。看文档是码农必备技能，英语不好的童鞋浏览器装个划词翻译的插件。</p>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>多实践。不管是用核心模块还是外部模块，尝试用 Node.js 解决某个问题或者替换掉以前用其他语言写过的代码。<br>读源码。这里说的读源码并不是说上来就去读 Node 或者其他较大的框架的源码。这个时候，挑一些简单的只实现某个特定功能的工具模块的源码读，这种模块的代码通常在几百行，阅读起来并不是很困难，但是却能涨不少的姿势。比如：<br>underscore （学习 JavaScript 的语法和技巧）<br>等等</p>
+<h2 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h2><p>坚持第四步。在使用 Node.js 时发现没有合适的模块选择或者选择的模块功能不尽人意，这个时候你可以尝试去创建一个模块或者修改现有的模块，并且使用 npm 发布自己的模块或者去该模块的 GitHub  上提 PR 。</p>
+<h2 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h2><p>多实践。这个就不用解释了<br>读 Node 源码及较大的框架的源码。提高必备<br>多关注下 GitHub 上的牛人<br>重复第1-6步<br>PS：贯穿始终的是买几本 Node.js 的书读，推荐《深入浅出Node.js》，<a href="https://download.csdn.net/download/duolayimao/10216676" target="_blank" rel="external">电子版下载地址</a>。</p>
+<hr>
+<p>本文转载自<a href="https://cnodejs.org/topic/535376501969a7b22aca6d24" target="_blank" rel="external">学习 Node.js 的 6 个步骤</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://dcpnonstop.github.io/blogimg/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/10/前端面试手册/" class="archive-article-date">
-  	<time datetime="2018-10-10T07:06:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/10/前端面试手册/">前端面试手册</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,364 +242,116 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/12/27/学习-Node-js-的-6-个步骤/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/06/初识Promise/" class="archive-article-date">
-  	<time datetime="2018-10-06T08:08:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/24/git上传文件常见命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git上传文件常见命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/06/初识Promise/">初识Promise</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/12/27/学习-Node-js-的-6-个步骤/", 
+    sourceId: "学习-Node-js-的-6-个步骤",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/10/04/flex布局学习/" class="archive-article-date">
-  	<time datetime="2018-10-04T12:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/04/flex布局学习/">flex布局学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/30/前端模拟排序动画/" class="archive-article-date">
-  	<time datetime="2018-09-30T05:24:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/30/前端模拟排序动画/">前端模拟排序动画</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/29/JavaScript中this指向详解/" class="archive-article-date">
-  	<time datetime="2018-09-29T08:12:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/29/JavaScript中this指向详解/">JavaScript中this指向详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/29/JavaScript闭包详解/" class="archive-article-date">
-  	<time datetime="2018-09-29T08:05:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/29/JavaScript闭包详解/">JavaScript闭包详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术积累</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/29/cvte视频二面-招银网络电话一面/" class="archive-article-date">
-  	<time datetime="2018-09-29T07:50:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/29/cvte视频二面-招银网络电话一面/">cvte视频二面+招银网络电话一面</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/27/网易-cvte面试记录/" class="archive-article-date">
-  	<time datetime="2018-09-27T14:29:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/27/网易-cvte面试记录/">网易+cvte面试记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试总结</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/26/写在奶奶去世一周年/" class="archive-article-date">
-  	<time datetime="2018-09-26T04:47:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/26/写在奶奶去世一周年/">写在奶奶去世一周年</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/23/“账号已注销”，再见网易云/" class="archive-article-date">
-  	<time datetime="2018-09-23T13:16:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/23/“账号已注销”，再见网易云/">“账号已注销”，再见网易云</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -579,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
