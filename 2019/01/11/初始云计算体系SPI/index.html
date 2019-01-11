@@ -17,7 +17,7 @@
 <meta property="og:description" content="&amp;ensp;&amp;ensp;&amp;ensp;根据美国国家标准与技术研究院的权威定义，云计算有SPI，即SaaS、PaaS和IaaS三种服务模式，这是目前被业界最广泛认同的划分。虽然它们已业内多数人所熟知，但是对于三者之间的关系，能够道清的为数不多。下文将帮助大家近一步明晰：  SPI is an acronym for the most common cloud computing service mod">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/SPI+Model+and+the+separation+of+responsibilities.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/spI.png">
-<meta property="og:updated_time" content="2019-01-11T05:09:43.902Z">
+<meta property="og:updated_time" content="2019-01-11T05:13:50.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初始云计算体系SPI">
 <meta name="twitter:description" content="&amp;ensp;&amp;ensp;&amp;ensp;根据美国国家标准与技术研究院的权威定义，云计算有SPI，即SaaS、PaaS和IaaS三种服务模式，这是目前被业界最广泛认同的划分。虽然它们已业内多数人所熟知，但是对于三者之间的关系，能够道清的为数不多。下文将帮助大家近一步明晰：  SPI is an acronym for the most common cloud computing service mod">
@@ -190,7 +190,9 @@
 <p>SPI is an acronym for the most common cloud computing service models, Software as a Service, Platform as a Service and Infrastructure as a Service.</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/SPI+Model+and+the+separation+of+responsibilities.png" alt="在这里插入图片描述"></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="“层次”的不同"><a href="#“层次”的不同" class="headerlink" title="“层次”的不同"></a>“层次”的不同</h3><p>&ensp;&ensp;&ensp;这里所谓的“层次”，是分层体系架构意义上的“层次”。首先，<strong>基础设施即服务（IaaS）</strong> 在基础设施层实现，Iaas通过网络向用户提供计算机（物理机和虚拟机）、存储空间、网络连接、负载均衡和防火墙等基本计算资源；用户在此基础上部署和运行各种软件，包括操作系统和应用程序。其次，<strong>平台即服务（PaaS）</strong> 是在软件开放运行平台层实现，PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户，PaaS是SaaS模式的一种。<br>&ensp;&ensp;&ensp;最后，<strong>软件即服务（SaaS）</strong> 由应用软件层实现，它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/spI.png" alt="在这里插入图片描述"></p>
+<a id="more"></a>
+<hr>
+<h3 id="“层次”的不同"><a href="#“层次”的不同" class="headerlink" title="“层次”的不同"></a>“层次”的不同</h3><p>&ensp;&ensp;&ensp;这里所谓的“层次”，是分层体系架构意义上的“层次”。首先，<strong>基础设施即服务（IaaS）</strong> 在基础设施层实现，Iaas通过网络向用户提供计算机（物理机和虚拟机）、存储空间、网络连接、负载均衡和防火墙等基本计算资源；用户在此基础上部署和运行各种软件，包括操作系统和应用程序。其次，<strong>平台即服务（PaaS）</strong> 是在软件开放运行平台层实现，PaaS实际上是指将软件研发的平台作为一种服务，以SaaS的模式提交给用户，PaaS是SaaS模式的一种。<br>&ensp;&ensp;&ensp;最后，<strong>软件即服务（SaaS）</strong> 由应用软件层实现，它是一种通过Internet提供软件的模式，用户无需购买软件，而是向提供商租用基于Web的软件，来管理企业经营活动。<br><img src="https://raw.githubusercontent.com/dcpnonstop/blogpic/master/spI.png" alt="在这里插入图片描述"></p>
 <h3 id="进入PaaS之前，须有IaaS"><a href="#进入PaaS之前，须有IaaS" class="headerlink" title="进入PaaS之前，须有IaaS"></a>进入PaaS之前，须有IaaS</h3><p>&ensp;&ensp;&ensp;正如前面说到的，它们存在着“层次”的不同，在实施PaaS之前，须有IaaS提供的服务基础。第一步是迈向资源共享，也就是常见的虚拟化，如果没有在此基础上持续改进的话，那么拥有一个高度虚拟化的环境的价值值得怀疑；第二步是业界需要持续不断地在实践中推动和简化资源池的使用和管理，这将使得客户从虚拟化演进的第一步中也受益匪浅，而且能够有效地满足客户的需求。从IaaS迁移到PaaS相对富有挑战性，最困难的挑战之一是选择方法和架构，在有些时候，平台可以简单到只是一系列的虚拟机的组合。 </p>
 <h3 id="三者的界限开始模糊"><a href="#三者的界限开始模糊" class="headerlink" title="三者的界限开始模糊"></a>三者的界限开始模糊</h3><p>&ensp;&ensp;&ensp;基于云的基础设施即服务(IaaS)是指从服务供应商租用存储和计算能力，通过互联网连接提供给用户。同样，软件即服务(SaaS)是用于访问托管在云中的应用程序。平台即服务(PaaS)有点像是介于这两者之间，提供在云中的应用程序开发和托管平台。在很多方面，PaaS结合了基础设施即服务和软件及服务的元素。<br>&ensp;&ensp;&ensp;最近，有研究人员在密切追踪PaaS之后表示，IaaS、PaaS和SaaS三者之间的界限开始模糊，例如亚马逊正在为自己的IaaS服务添加类似PaaS的功能。驱动它们界限变得模糊的因素有两个，其一是供应商正在试图扩大其服务产品范围来吸引更广泛的客户群；其二是用户正在以新方式使用云计算，他们期待从其供应商获取想要的功能。<br>&ensp;&ensp;&ensp;随着云计算技术的成熟，云计算解决方案必然向着集成化的方向转变，这不仅是市场消费群体的需求，更是云计算编码人员、快速开发人员工作的需要。三种模式融合化的趋势，有利于云计算市场的快速健康发展。</p>
 <hr>
@@ -451,11 +453,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心情记录</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">心情记录</a>
               </li>
              
               <li class="article-tag-list-item">
